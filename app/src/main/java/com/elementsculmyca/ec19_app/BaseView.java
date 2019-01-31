@@ -16,8 +16,15 @@
 
 package com.elementsculmyca.ec19_app;
 
+import android.support.v7.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public interface BaseView<T> {
 
     void setPresenter(T presenter);
 
+
 }
+
