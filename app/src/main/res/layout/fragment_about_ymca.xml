@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aboutYmcaFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YMCA"
+            android:textSize="28dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/ymca"
+            android:textColor="@color/Black"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_below="@id/ymca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UNIVERSITY"
+            android:textColor="@color/Black"
+            android:textSize="32dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/university"
+            />
+
+
+        <TextView
+            android:id="@+id/about_ymca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/culmyca"
+            android:layout_marginTop="222dp"
+            android:layout_centerInParent="true"
+            android:text="coming soon"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textSize="12dp" />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
