@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginScreen.LoginPresenter">
+
+    <ImageView
+        android:id="@+id/Bottom_img"
+        android:layout_width="match_parent"
+        android:layout_height="284dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/noun_party_574842" />
+
+    <ImageView
+        android:layout_width="618dp"
+        android:layout_height="517dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/noun_festival_892727" />
+
+    <ImageView
+        android:layout_width="334dp"
+        android:layout_height="501dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp"
+        android:src="@drawable/noun_lanterns_1253407" />
+
+    <ImageView
+        android:layout_marginStart="14.7dp"
+        android:layout_marginTop="9.3dp"
+        android:layout_width="38.7dp"
+        android:layout_height="38.7dp"
+        android:src="@drawable/ec_logo_2019" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Bottom_img"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical">
+
+
+        <Button
+            android:layout_width="330dp"
+            android:layout_height="39.3dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="45dp"
+            android:backgroundTint="@color/colorGoogle_Login_Pink"
+            android:text="Login with Google"
+            android:textColor="#89d0021b"
+            android:textSize="14.7sp"
+            tools:text="Login with Google" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#7e7e7e"
+            android:textSize="14.7sp"
+            android:layout_gravity="center"
+            android:text="or" />
+
+        <Button
+            android:layout_width="330dp"
+            android:layout_height="39.3dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="0dp"
+            android:backgroundTint="@color/colorFacebook_Login_blue"
+            android:text="Login with Facebook"
+            android:textColor="#be055ec6"
+            android:textSize="14.7sp"
+            tools:text="Login with Facebook" />
+    </LinearLayout>
+
+
+</RelativeLayout>
