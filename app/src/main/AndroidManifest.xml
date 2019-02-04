@@ -13,12 +13,13 @@
 
         <activity android:name=".SplashScreen.SplashScreenActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".LoginScreen.LoginPresenter"></activity>
+        <activity android:name=".MainScreen.MainScreenActivity"></activity>
     </application>
 
 </manifest>
