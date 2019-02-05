@@ -1,4 +1,4 @@
-package com.elementsculmyca.ec19_app;
+package com.elementsculmyca.ec19_app.MainScreen;
 
 public class EventListModel {
 

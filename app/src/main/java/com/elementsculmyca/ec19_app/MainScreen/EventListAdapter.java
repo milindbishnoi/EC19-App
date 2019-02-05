@@ -1,4 +1,4 @@
-package com.elementsculmyca.ec19_app;
+package com.elementsculmyca.ec19_app.MainScreen;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.elementsculmyca.ec19_app.R;
 
 import java.util.List;
 
