@@ -9,9 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.util.ExceptionCatchingInputStream;
 import com.elementsculmyca.ec19_app.R;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -20,6 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.squareup.picasso.Picasso;
 
 import static com.google.android.gms.common.api.GoogleApiClient.*;
 
@@ -70,15 +68,15 @@ public class LoginPresenter extends AppCompatActivity implements View.OnClickLis
             userEmail = account.getEmail();
             Toast.makeText(LoginPresenter.this,"Hello , "+userName , Toast.LENGTH_SHORT).show();
 
-           /* try {
+            try {
                 String img_url = account.getPhotoUrl().toString();
                 if(img_url!=null)
-                Glide.with(this).load(img_url).into(profPic);
+                Picasso.get().load(img_url).into(profPic);
 
             }catch (Exception e){
             if (e!=null)
-                profPic.setImageResource(R.drawable.noupld);
-            }*/
+                profPic.setImageResource(R.drawable.googlesdninophotoupld);
+            }
         }
         else
             Toast.makeText(LoginPresenter.this,"Login Failed, Please Try Again!",Toast.LENGTH_SHORT).show();
