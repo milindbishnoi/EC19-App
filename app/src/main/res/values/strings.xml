@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EC19-App</string>
+    <string name="Open">EC19-App</string>
+    <string name="Close">EC19-App</string>
 </resources>
