@@ -3,23 +3,25 @@
     package="com.elementsculmyca.ec19_app">
 
     <application
-        android:name=".Util.CustomFontApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
-
+        android:theme="@style/AppTheme">
         <activity android:name=".SplashScreen.SplashScreenActivity">
             <intent-filter>
-                                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginScreen.LoginPresenter"></activity>
-        <activity android:name=".MainScreen.MainScreenActivity"></activity>
+        <activity
+            android:name=".LoginScreen.LoginPresenter"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".MainScreen.MainScreenActivity"
+            android:label="@string/title_activity_main_screen"></activity>
     </application>
 
 </manifest>

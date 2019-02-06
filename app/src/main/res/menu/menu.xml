@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item
-    android:id="@+id/i1"
-    android:title="Event1"
-    android:icon="@drawable/ic_adb_black_24dp"
-    >
-</item>
+    <item
+        android:id="@+id/i1"
+        android:icon="@drawable/ic_adb_black_24dp"
+        android:title="Event1"></item>
     <item
         android:id="@+id/i2"
-        android:title="Event2"
         android:icon="@drawable/ic_adb_black_24dp"
-        >
-    </item>
+        android:title="Event2"></item>
     <item
         android:id="@+id/i3"
-        android:title="Event3"
         android:icon="@drawable/ic_adb_black_24dp"
-        >
-    </item>
+        android:title="Event3"></item>
 </menu>

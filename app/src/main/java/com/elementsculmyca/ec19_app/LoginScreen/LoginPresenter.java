@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.elementsculmyca.ec19_app.MainScreen.MainScreenActivity;
 import com.elementsculmyca.ec19_app.R;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -52,34 +53,36 @@ public class LoginPresenter extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
     }
-    void signIn(){
+
+    void signIn() {
         Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
-        startActivityForResult(intent,reqCode);
+        startActivityForResult(intent, reqCode);
     }
 
 
-    void handleResult(GoogleSignInResult result){
+    void handleResult(GoogleSignInResult result) {
 
-        if(result.isSuccess()){
+        if (result.isSuccess()) {
             GoogleSignInAccount account = result.getSignInAccount();
             userName = account.getDisplayName();
             userEmail = account.getEmail();
-            Toast.makeText(LoginPresenter.this,"Hello , "+userName , Toast.LENGTH_SHORT).show();
+//#TODOShared Preference Code to be written here
+            startActivity(new Intent(LoginPresenter.this, MainScreenActivity.class));
+            Toast.makeText(LoginPresenter.this, "Hello , " + userName, Toast.LENGTH_SHORT).show();
 
             try {
                 String img_url = account.getPhotoUrl().toString();
-                if(img_url!=null) {
+                if (img_url != null) {
                 }
                 //Picasso.get().load(img_url).into(profPic);
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 if (e != null) {
                 }
                 //profPic.setImageResource(R.drawable.googlesdninophotoupld);
             }
-        }
-        else
-            Toast.makeText(LoginPresenter.this,"Login Failed, Please Try Again!",Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(LoginPresenter.this, "Login Failed, Please Try Again!", Toast.LENGTH_SHORT).show();
 
 
     }
@@ -88,8 +91,8 @@ public class LoginPresenter extends AppCompatActivity implements View.OnClickLis
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode==reqCode){
-            GoogleSignInResult  result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+        if (requestCode == reqCode) {
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleResult(result);
         }
 
