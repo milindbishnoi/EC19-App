@@ -43,16 +43,13 @@
             android:orientation="vertical">
 
 
-            <Button
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/googleLogin"
                 android:layout_width="330dp"
                 android:layout_height="39.3dp"
-                android:layout_marginLeft="27dp"
-                android:layout_marginTop="45dp"
-                android:backgroundTint="@color/colorGoogle_Login_Pink"
-                android:text="Login with Google"
-                android:textColor="#89d0021b"
-                android:textSize="14.7sp"
-                tools:text="Login with Google" />
+                android:layout_marginLeft="37dp"
+                android:layout_marginTop="40dp"
+                tools:text="Login with Google"></com.google.android.gms.common.SignInButton>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,7 +62,7 @@
             <Button
                 android:layout_width="330dp"
                 android:layout_height="39.3dp"
-                android:layout_marginLeft="27dp"
+                android:layout_marginLeft="37dp"
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/colorFacebook_Login_blue"
                 android:text="Login with Facebook"
