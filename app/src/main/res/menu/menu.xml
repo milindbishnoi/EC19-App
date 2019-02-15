@@ -1,15 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/i1"
-        android:icon="@drawable/ic_adb_black_24dp"
-        android:title="Event1"></item>
-    <item
-        android:id="@+id/i2"
-        android:icon="@drawable/ic_adb_black_24dp"
-        android:title="Event2"></item>
-    <item
-        android:id="@+id/i3"
-        android:icon="@drawable/ic_adb_black_24dp"
-        android:title="Event3"></item>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/vector_home"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_tickets"
+            android:icon="@drawable/vector_tickets"
+            android:title="My Tickets" />
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/vector_notifications"
+            android:title="Notifications" />
+
+        <item
+            android:id="@+id/nav_culmyca"
+            android:icon="@drawable/vector_cul_times"
+            android:title="Culmyca Times" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/vector_info"
+            android:title="About" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/vector_logout"
+            android:title="Logout" />
+        <item
+            android:id="@+id/nav_sponsors"
+            android:icon="@drawable/vector_sponsors"
+            android:title="Sponsors" />
+    </group>
+
+    <item android:title="More About App">
+
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/vector_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_bug"
+                android:icon="@drawable/vector_bug"
+                android:title="Report a Bug" />
+
+        </menu>
+    </item>
+
 </menu>

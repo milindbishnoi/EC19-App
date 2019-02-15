@@ -22,6 +22,9 @@
         <activity
             android:name=".MainScreen.MainScreenActivity"
             android:label="@string/title_activity_main_screen"></activity>
+        <activity
+            android:name=".MainScreen.SearchEventActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"></activity>
     </application>
 
 </manifest>
