@@ -10,16 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".eventLayout"
-            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+            android:name=".EventPage.EventMainPage"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"></activity>
+        <activity android:name=".SplashScreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".SplashScreen.SplashScreenActivity">
-
         </activity>
         <activity
             android:name=".LoginScreen.LoginPresenter"

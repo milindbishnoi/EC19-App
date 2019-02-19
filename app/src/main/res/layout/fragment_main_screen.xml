@@ -47,6 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            android:id="@+id/btn_day1"
             android:text="day1 " />
 
         <Button
@@ -64,12 +65,10 @@
             android:text="day3 " />
 
     </LinearLayout>
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/event_list"
         android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:padding="10dp">
 
     </android.support.v7.widget.RecyclerView>

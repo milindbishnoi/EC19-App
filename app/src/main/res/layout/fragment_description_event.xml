@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Description_event"
+    tools:context=".EventPage.DescriptionEventFragment"
     android:layout_margin="8dp"
     android:id="@+id/description_event">
 <ScrollView

@@ -4,12 +4,15 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.elementsculmyca.ec19_app.EventPage.EventMainPage;
 import com.elementsculmyca.ec19_app.R;
 
 public class MainScreenActivity extends Activity
@@ -84,6 +87,18 @@ public class MainScreenActivity extends Activity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main_screen, container, false);
+            Button day1;
+            day1 = rootView.findViewById(R.id.btn_day1);
+            day1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity().getApplicationContext(), EventMainPage.class));
+                }
+            });
+
+
+
+
             return rootView;
         }
 
