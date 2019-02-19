@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.elementsculmyca.ec19_app.MainScreen.MainScreenActivity;
 import com.elementsculmyca.ec19_app.R;
+import com.elementsculmyca.ec19_app.eventLayout;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
