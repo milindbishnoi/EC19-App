@@ -3,7 +3,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".LoginScreen.LoginPresenter">
+        tools:context=".LoginScreen.LoginActivity">
 
         <ImageView
             android:layout_width="match_parent"
@@ -62,8 +62,9 @@
                 android:layout_gravity="center"
                 android:text="or" />
 
-            <Button
+            <com.facebook.login.widget.LoginButton
                 android:layout_width="330dp"
+                android:id="@+id/facebook_login"
                 android:layout_height="39.3dp"
                 android:layout_marginLeft="27dp"
                 android:layout_marginTop="0dp"

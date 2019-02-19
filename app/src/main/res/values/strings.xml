@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EC19-App</string>
+    <string name="facebook_app_id">1152402261588435</string>
+    <string name="facebook_login_protocol_scheme">fb1152402261588435</string>
 </resources>
