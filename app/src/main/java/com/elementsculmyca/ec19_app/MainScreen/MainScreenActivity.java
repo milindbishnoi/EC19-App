@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.elementsculmyca.ec19_app.R;
+import com.elementsculmyca.ec19_app.aboutPage.AboutBaseFragment;
 
 public class MainScreenActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -41,6 +42,14 @@ public class MainScreenActivity extends Activity
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
+
+        if (position == 1) {
+
+            fragmentManager.beginTransaction()
+                    .replace( R.id.container, AboutBaseFragment.newInstance( position + 1 ) )
+                    .commit();
+
+        }
     }
 
     public void onSectionAttached(int number) {
@@ -85,7 +94,10 @@ public class MainScreenActivity extends Activity
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main_screen, container, false);
             return rootView;
+
+
         }
+
 
         @Override
         public void onAttach(Activity activity) {

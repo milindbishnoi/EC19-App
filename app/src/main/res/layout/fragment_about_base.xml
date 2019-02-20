@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/common_google_signin_btn_icon_disabled"
+    tools:context="com.elementsculmyca.ec19_app.aboutPage.AboutBaseFragment">
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/abt_act_bar"
+        android:layout_marginTop="-1dp">
+
+    </android.support.v4.view.ViewPager>
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/abt_act_bar"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:rotation="180"
+        android:src="@drawable/vector_arrow" />
+
+
+    <ImageView
+        android:id="@+id/page2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/abt_act_bar"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/vector_arrow" />
+
+
+</RelativeLayout>
