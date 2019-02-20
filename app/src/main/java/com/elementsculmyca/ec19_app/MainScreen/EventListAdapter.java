@@ -34,6 +34,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         holder.text_content_event.setText(el.getcContent());
         holder.text_head_event.setText(el.getCtitle());
 
+
     }
 
     @Override
