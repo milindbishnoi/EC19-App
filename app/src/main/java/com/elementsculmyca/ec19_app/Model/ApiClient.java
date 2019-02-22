@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    public static final String BASE_URL = " https://api.kloh.in//kloh/external/v1/";
+    public static final String BASE_URL = "https://culmyca19.herokuapp.com/";
 
 
     private static Retrofit retrofit = null;
