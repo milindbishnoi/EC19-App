@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.elementsculmyca.ec19_app">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainScreen.MainScreenActivity">
+        <activity
+            android:name=".EventPage.EventMainPage"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"></activity>
+        <activity android:name=".SplashScreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,8 +23,8 @@
             android:name=".LoginScreen.LoginPresenter"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
         <activity
-            android:name=".SplashScreen.SplashScreenActivity"
-            android:label="@string/title_activity_main_screen"></activity>
+            android:name=".MainScreen.MainScreenActivity"
+            android:label="@string/title_activity_main_screen" />
     </application>
 
 </manifest>

@@ -33,6 +33,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
         EventListModel el = eventlist.get(position);
 
 
+
     }
 
     @Override

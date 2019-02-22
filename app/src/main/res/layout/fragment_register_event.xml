@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    tools:context=".EventPage.RegisterEventFragment"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/register_event">
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="199dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/date"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="13dp"
+            android:background="#F5B041  "
+            android:text=" View details" />
+
+    </RelativeLayout>
+
+   <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+       android:layout_below="@id/register_event">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:id="@+id/registration"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Registration"
+            android:textSize="24dp"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"/>
+
+
+
+
+
+
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Name"
+              android:textSize="15dp"
+              android:layout_marginLeft="20dp"
+              android:layout_marginTop="15dp"
+              android:textColor="#000000"
+              android:textStyle="bold" />
+          <EditText
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Enter your name"
+              android:textSize="15dp"
+              android:layout_marginLeft="20dp"
+              android:layout_marginRight="30dp"
+              android:textColorHint="@color/cardview_dark_background"/>
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Mobile No."
+              android:textSize="15dp"
+              android:layout_marginLeft="20dp"
+              android:layout_marginTop="15dp"
+              android:textColor="#000000"
+              android:textStyle="bold"/>
+          <EditText
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="+91 98XXXXXXXX"
+              android:inputType="phone"
+              android:textSize="15dp"
+              android:layout_marginLeft="20dp"
+              android:layout_marginRight="30dp"
+              android:textColorHint="@color/cardview_dark_background"/>
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="27dp"
+                  android:layout_weight="3"
+                  android:gravity="right|center_vertical"
+                  android:textSize="20dp"
+                  android:textColor="#000000"
+                  android:layout_marginRight="20dp"
+                  android:text="Add Members" />
+              <Button
+                  android:layout_width="24dp"
+                  android:layout_height="27dp"
+                  android:layout_marginRight="10dp"
+                  android:background="@drawable/plus"/>
+              <Button
+                  android:layout_width="24dp"
+                  android:layout_height="27dp"
+                  android:layout_marginRight="30dp"
+                  android:background="@drawable/minus"/>
+          </LinearLayout>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="20dp"
+              android:layout_marginTop="30dp"
+              android:text="enter dummy text here.."
+              android:layout_marginLeft="40dp"
+              android:layout_marginRight="40dp"
+              />
+
+
+          <Button
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="30dp"
+              android:layout_marginLeft="60dp"
+              android:layout_marginRight="60dp"
+              android:background="@drawable/buttonshape"
+              android:text="Register Now"
+              android:textAllCaps="false"
+              android:textSize="25dp"
+              android:textColor="#ffffff"
+
+
+
+              />
+
+          <Button
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:layout_marginLeft="60dp"
+              android:layout_marginRight="60dp"
+              android:background="@drawable/buttonshape"
+              android:text="Save it for later"
+              android:textAllCaps="false"
+              android:textSize="25dp"
+              android:textColor="#ffffff"
+              android:id="@+id/save"
+
+
+
+              />
+      </LinearLayout>
+
+
+     </ScrollView>
+
+
+</RelativeLayout>

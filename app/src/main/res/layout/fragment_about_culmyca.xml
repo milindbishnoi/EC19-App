@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elementsculmyca.ec19_app.aboutPage.AboutCulmyca">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ELEMENTS"
+            android:layout_marginTop="20dp"
+            android:textSize="28dp"
+            android:id="@+id/elements"
+            android:textColor="#111"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:layout_below="@id/elements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CULMYCA"
+            android:textColor="#111"
+            android:textSize="32dp"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/content"
+            android:layout_centerInParent="true"
+            android:text="@string/aboutEc"
+            android:textAlignment="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="16dp" />
+
+
+
+
+    </RelativeLayout>
+</FrameLayout>
