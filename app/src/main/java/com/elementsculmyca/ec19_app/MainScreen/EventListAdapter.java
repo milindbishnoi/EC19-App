@@ -31,8 +31,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
     public void onBindViewHolder(EventViewHolder holder, int position) {
 
         EventListModel el = eventlist.get(position);
-        holder.text_content_event.setText(el.getcContent());
-        holder.text_head_event.setText(el.getCtitle());
+
 
 
     }
