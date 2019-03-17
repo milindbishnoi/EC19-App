@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginScreen.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/drama_x_9_ad_782_cb" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="59dp"
+            android:src="@drawable/ec_logo_2019" />
+
+        <TextView
+            android:id="@+id/elements_cul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/overpass_black"
+            android:text="Elements Culmyca 19"
+            android:textColor="#ffffff"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/dumt_t1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/overpass_black"
+            android:text=" Saga of  Cultural + Technical Events "
+            android:textColor="#f5a623"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dumt_t1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/overpass_black"
+            android:text="Login "
+            android:textColor="#ffffff"
+            android:textSize="24.5dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:background="@drawable/buttonshape"
+            android:backgroundTint="#d8d8d8"
+            android:padding="5dp">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonshape"
+                android:backgroundTint="#d8d8d8"
+                android:fontFamily="@font/overpass_black"
+                android:hint="+91- Mobile Number"
+                android:paddingLeft="20dp" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/buttonshape"
+                android:backgroundTint="#b4d75b69"
+                android:padding="5dp"
+                android:src="@drawable/ic_arrow"
+                android:tint="#434343" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/button_guest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/overpass_black"
+            android:text="Continue as Guest"
+            android:textColor="#e1e1e1"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/shaurya"
+        android:layout_centerHorizontal="true"
+
+        android:fontFamily="@font/overpass_black"
+        android:text="The Golden Jublee Culmyca"
+        android:textColor="#f5a623"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/shaurya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginBottom="14dp"
+        android:fontFamily="@font/overpass_black"
+        android:text="#shaurya"
+        android:textColor="#ffffff"
+        android:textSize="12sp" />
+</RelativeLayout>

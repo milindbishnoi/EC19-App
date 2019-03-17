@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.elementsculmyca.ec19_app.LoginScreen.LoginPresenter;
+import com.elementsculmyca.ec19_app.LoginScreen.LoginActivity;
 import com.elementsculmyca.ec19_app.R;
 
 public class SplashScreenActivity extends Activity {
@@ -17,7 +17,7 @@ public class SplashScreenActivity extends Activity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run(){
-                Intent SplashScreen =new Intent(SplashScreenActivity.this, LoginPresenter.class);
+                Intent SplashScreen = new Intent( SplashScreenActivity.this, LoginActivity.class );
                 startActivity(SplashScreen);
                 finish();
             }

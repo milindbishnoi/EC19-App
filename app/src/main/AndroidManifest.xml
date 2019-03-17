@@ -11,8 +11,10 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".EventPage.EventMainPage"
-            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"></activity>
-        <activity android:name=".SplashScreen.SplashScreenActivity">
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".SplashScreen.SplashScreenActivity"
+            android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,11 +22,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginScreen.LoginPresenter"
-            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
+            android:name=".LoginScreen.LoginActivity"
+            android:theme="@style/NoActionBar" />
         <activity
             android:name=".MainScreen.MainScreenActivity"
-            android:label="@string/title_activity_main_screen" />
+            android:label="@string/title_activity_main_screen"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"></activity>
     </application>
 
 </manifest>

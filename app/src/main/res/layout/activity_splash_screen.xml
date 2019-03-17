@@ -6,10 +6,63 @@
     tools:context=".SplashScreen.SplashScreenActivity">
 
     <ImageView
-        android:layout_width="143.9dp"
-        android:layout_height="80.9dp"
-        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ec_back_2" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
         android:src="@drawable/ec_logo_2019" />
 
+    <TextView
+        android:id="@+id/elements_cul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/overpass_black"
+        android:text="Elements Culmyca 19"
+        android:textColor="#ffffff"
+        android:textSize="24sp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/elements_cul"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/overpass_black"
+        android:text="The Annual Cultural Fest of JCBUST, YMCA"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/shaurya"
+        android:layout_centerHorizontal="true"
+
+        android:fontFamily="@font/overpass_black"
+        android:text="The Golden Jublee Culmyca"
+        android:textColor="#f5a623"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/shaurya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginBottom="14dp"
+        android:fontFamily="@font/overpass_black"
+        android:text="#shaurya"
+        android:textColor="#ffffff"
+        android:textSize="12sp" />
 </RelativeLayout>
