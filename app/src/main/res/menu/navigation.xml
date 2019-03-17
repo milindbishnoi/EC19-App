@@ -3,16 +3,16 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="Songs" />
+        android:title="Home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_about"
         android:icon="@drawable/ic_launcher_foreground"
-        android:title="Albums" />
+        android:title="About" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_logout"
         android:icon="@drawable/ic_arrow"
-        android:title="Artists" />
+        android:title="Logout" />
 
 </menu>

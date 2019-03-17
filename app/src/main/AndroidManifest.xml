@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/NoActionBar">
         <activity
             android:name=".EventPage.EventMainPage"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
@@ -26,7 +26,6 @@
             android:theme="@style/NoActionBar" />
         <activity
             android:name=".MainScreen.MainScreenActivity"
-            android:label="@string/title_activity_main_screen"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"></activity>
     </application>
 

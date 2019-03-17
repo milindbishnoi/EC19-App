@@ -2,7 +2,6 @@
     <string name="app_name">EC19-App</string>
     <string name="Open">EC19-App</string>
     <string name="Close">EC19-App</string>
-    <string name="title_activity_main_screen">MainScreenActivity</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
