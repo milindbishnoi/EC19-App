@@ -3,148 +3,145 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
     tools:context=".EventPage.RegisterEventFragment"
     >
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/register_event">
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="199dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/date"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="13dp"
-            android:background="#F5B041  "
-            android:text=" View details" />
-
-    </RelativeLayout>
-
-   <ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-       android:layout_below="@id/register_event">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         >
 
         <TextView
             android:id="@+id/registration"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:text="Registration"
-            android:textSize="24dp"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"/>
-
-
-
-
-
-
+            android:textSize="20sp"
+            android:fontFamily="@font/overpass_black"
+            android:textStyle="bold"
+            android:textColor="#4a4a4a"/>
 
           <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="Name"
-              android:textSize="15dp"
-              android:layout_marginLeft="20dp"
-              android:layout_marginTop="15dp"
-              android:textColor="#000000"
-              android:textStyle="bold" />
+              android:textSize="15sp"
+              android:textStyle="bold"
+              android:fontFamily="@font/overpass_black"
+              android:layout_marginTop="8dp"
+              android:layout_marginLeft="5dp" />
           <EditText
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:hint="Enter your name"
+              android:hint="Enter Name"
+              android:layout_marginTop="8dp"
+              android:background="@drawable/buttonshape"
+              android:backgroundTint="#d8d8d8"
               android:textSize="15dp"
-              android:layout_marginLeft="20dp"
-              android:layout_marginRight="30dp"
-              android:textColorHint="@color/cardview_dark_background"/>
+              android:paddingTop="10dp"
+              android:fontFamily="@font/overpass_black"
+              android:paddingBottom="10dp"
+              android:paddingLeft="20dp"
+              android:layout_marginLeft="5dp"
+              android:layout_marginRight="5dp"
+              android:textColorHint="#9b9b9b"/>
           <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="Mobile No."
-              android:textSize="15dp"
-              android:layout_marginLeft="20dp"
-              android:layout_marginTop="15dp"
-              android:textColor="#000000"
+              android:textSize="15sp"
+              android:fontFamily="@font/overpass_black"
+              android:layout_marginLeft="5dp"
+              android:layout_marginTop="8dp"
               android:textStyle="bold"/>
           <EditText
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:hint="+91 98XXXXXXXX"
+              android:hint="Enter Phone Number"
               android:inputType="phone"
+              android:background="@drawable/buttonshape"
               android:textSize="15dp"
-              android:layout_marginLeft="20dp"
-              android:layout_marginRight="30dp"
-              android:textColorHint="@color/cardview_dark_background"/>
+              android:paddingTop="10dp"
+              android:fontFamily="@font/overpass_black"
+              android:paddingBottom="10dp"
+              android:paddingLeft="20dp"
+              android:layout_marginLeft="5dp"
+              android:layout_marginRight="5dp"
+              android:layout_marginTop="8dp"
+              android:textColorHint="#9b9b9b"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
           <LinearLayout
-              android:layout_width="match_parent"
+              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:orientation="horizontal">
+              android:orientation="horizontal"
+              android:layout_marginRight="5dp"
+              android:gravity="center"
+              android:layout_marginTop="15dp"
+              android:layout_alignParentRight="true">
               <TextView
-                  android:layout_width="match_parent"
-                  android:layout_height="27dp"
-                  android:layout_weight="3"
-                  android:gravity="right|center_vertical"
-                  android:textSize="20dp"
-                  android:textColor="#000000"
-                  android:layout_marginRight="20dp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="15sp"
+                  android:textColor="#4a4a4a"
+                  android:textStyle="bold"
+                  android:fontFamily="@font/overpass_black"
                   android:text="Add Members" />
               <Button
-                  android:layout_width="24dp"
-                  android:layout_height="27dp"
-                  android:layout_marginRight="10dp"
+                  android:layout_width="25dp"
+                  android:layout_height="25dp"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginRight="6dp"
                   android:background="@drawable/plus"/>
               <Button
-                  android:layout_width="24dp"
-                  android:layout_height="27dp"
-                  android:layout_marginRight="30dp"
+                  android:layout_width="25dp"
+                  android:layout_height="25dp"
                   android:background="@drawable/minus"/>
           </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="5dp">
+
           <TextView
-              android:layout_width="match_parent"
+              android:layout_width="0dp"
+              android:layout_weight="1"
               android:layout_height="wrap_content"
-              android:textSize="20dp"
-              android:layout_marginTop="30dp"
-              android:text="enter dummy text here.."
-              android:layout_marginLeft="40dp"
-              android:layout_marginRight="40dp"
-              />
-
-
-          <Button
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_marginTop="30dp"
-              android:layout_marginLeft="60dp"
-              android:layout_marginRight="60dp"
-              android:background="@drawable/buttonshape"
+              android:background="@drawable/button_background"
               android:text="Register Now"
-              android:textAllCaps="false"
-              android:textSize="25dp"
+              android:fontFamily="@font/overpass_black"
+              android:textSize="15sp"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:gravity="center"
+              android:layout_marginRight="15dp"
+              android:paddingTop="10dp"
+              android:paddingBottom="10dp"
               android:textColor="#ffffff"
-
-
-
               />
 
-          <Button
-              android:layout_width="match_parent"
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
               android:layout_height="wrap_content"
-              android:layout_marginTop="20dp"
-              android:layout_marginLeft="60dp"
-              android:layout_marginRight="60dp"
-              android:background="@drawable/buttonshape"
-              android:text="Save it for later"
-              android:textAllCaps="false"
-              android:textSize="25dp"
+              android:background="@drawable/button_background"
+              android:text="Save for later"
+              android:fontFamily="@font/overpass_black"
+              android:textSize="15sp"
+              android:gravity="center"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_gravity="center"
+              android:paddingTop="10dp"
+              android:paddingBottom="10dp"
               android:textColor="#ffffff"
               android:id="@+id/save"
 
@@ -152,9 +149,18 @@
 
               />
       </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="#shaurya"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginTop="15dp"
+            android:textColor="#000"
+            android:layout_marginBottom="5dp"/>
+    </LinearLayout>
 
-
-     </ScrollView>
 
 
 </RelativeLayout>
