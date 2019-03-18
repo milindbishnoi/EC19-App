@@ -12,7 +12,7 @@ public class EventMainPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_layout);
-
+//
 
         DescriptionEventFragment fragment = new DescriptionEventFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
