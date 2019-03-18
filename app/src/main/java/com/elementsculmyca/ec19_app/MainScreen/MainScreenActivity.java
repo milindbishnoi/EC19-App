@@ -18,7 +18,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
+//fragments attached
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
@@ -33,6 +33,7 @@ public class MainScreenActivity extends AppCompatActivity {
                     finish();
                     break;
             }
+
             return false;
         }
     };
