@@ -1,10 +1,11 @@
-package com.elementsculmyca.ec19_app;
+package com.elementsculmyca.ec19_app.SingleEventScreen;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-public class Single_event extends AppCompatActivity {
+import com.elementsculmyca.ec19_app.R;
 
+public class SingleEventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

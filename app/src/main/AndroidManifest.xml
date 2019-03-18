@@ -9,9 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name=".Single_event"
-            android:theme="@style/NoActionBar">
-        </activity>
         <activity
             android:name=".EventPage.EventMainPage"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
@@ -29,6 +26,9 @@
             android:theme="@style/NoActionBar" />
         <activity
             android:name=".MainScreen.MainScreenActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".SingleEventScreen.SingleEventActivity"
             android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
     </application>
 
