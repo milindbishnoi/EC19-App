@@ -1,15 +1,11 @@
-package com.elementsculmyca.ec19_app.SingleEventScreen;
+package com.elementsculmyca.ec19_app.EventPage;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.elementsculmyca.ec19_app.EventPage.DescriptionEventFragment;
-import com.elementsculmyca.ec19_app.EventPage.RegisterEventFragment;
-import com.elementsculmyca.ec19_app.HomePage.HomeFragment;
 import com.elementsculmyca.ec19_app.R;
 
 public class SingleEventActivity extends AppCompatActivity {

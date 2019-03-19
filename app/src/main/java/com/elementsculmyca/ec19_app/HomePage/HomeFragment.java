@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import com.elementsculmyca.ec19_app.SingleEventScreen.SingleEventActivity;
+import com.elementsculmyca.ec19_app.EventPage.SingleEventActivity;
 import com.elementsculmyca.ec19_app.aboutPage.AboutBaseFragment;
 
 public class HomeFragment extends Fragment {
