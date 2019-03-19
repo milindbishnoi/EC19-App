@@ -3,32 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="25dp"
     tools:context="com.elementsculmyca.ec19_app.HomePage.HomeFragment">
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
-        <android.support.v7.widget.SearchView
+        <SearchView
             android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="27dp"
-            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_view"
+            android:clickable="true"
             android:background="@drawable/button_background"
-            android:backgroundTint="#d8d8d8">
-        </android.support.v7.widget.SearchView>
+            android:backgroundTint="#d8d8d8" />
 
     </RelativeLayout>
 
     <TextView
-        android:layout_width="83dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/overpass_black"
         android:textColor="#4a4a4a"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:text="Categories"
 
         />
@@ -41,8 +44,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:layout_marginLeft="20dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/overpass_black"
         android:layout_marginTop="10dp"
         android:textColor="#4a4a4a"
         android:text="Schedule"
@@ -90,43 +93,23 @@
             android:layout_marginRight="60dp"
             />
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/schedule_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="358dp"
         android:orientation="vertical">
-
     </android.support.v7.widget.RecyclerView>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-    </LinearLayout>
-
-
+        </RelativeLayout>
 </LinearLayout>

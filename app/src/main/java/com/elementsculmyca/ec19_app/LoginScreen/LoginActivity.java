@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.elementsculmyca.ec19_app.ClubEventListPage.ClubEventListActivity;
 import com.elementsculmyca.ec19_app.MainScreen.MainScreenActivity;
 import com.elementsculmyca.ec19_app.R;
 
