@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/overpass_bold"
             android:text="JCBUST,YMCA Faridabad"
             android:textColor="#111"
@@ -23,20 +23,20 @@
 
         <ImageView
             android:id="@+id/ymcalogo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_below="@+id/ymca"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/logo" />
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_below="@+id/ymca"
             android:layout_marginStart="60dp"
 
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_toEndOf="@+id/ymcalogo"
             android:backgroundTint="#ffffff"
             android:src="@drawable/golden_jubilee_logo_final" />
@@ -48,8 +48,8 @@
 
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:fontFamily="@font/overpass_bold"
             android:gravity="center"
             android:text="@string/aboutymca"
@@ -61,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:fontFamily="@font/overpass_bold"
             android:layout_marginBottom="20dp"
             android:text="The Golden Jublee Culmyca"
             android:textColor="#f5a623"

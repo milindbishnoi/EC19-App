@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.elementsculmyca.ec19_app.aboutPage.AboutCulmyca">
+    android:background="#fff"
+    tools:context="com.elementsculmyca.ec19_app.aboutPage.AboutCulmyca"
+   >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,20 +16,21 @@
             android:layout_height="wrap_content"
             android:text="ELEMENTS"
             android:layout_marginTop="20dp"
-            android:textSize="28dp"
+            android:fontFamily="@font/overpass_bold"
+            android:textSize="26dp"
             android:id="@+id/elements"
             android:textColor="#111"
-            android:layout_centerHorizontal="true"
-            />
+            android:layout_centerHorizontal="true" />
+
         <TextView
             android:layout_below="@id/elements"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CULMYCA"
+            android:fontFamily="@font/overpass_bold"
             android:textColor="#111"
-            android:textSize="32dp"
-            android:layout_centerHorizontal="true"
-            />
+            android:textSize="30dp"
+            android:layout_centerHorizontal="true" />
 
 
         <TextView
@@ -35,14 +38,35 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:id="@+id/content"
+            android:fontFamily="@font/overpass_bold"
             android:layout_centerInParent="true"
             android:text="@string/aboutEc"
             android:textAlignment="center"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:textSize="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/overpass_bold"
+            android:text="The Golden Jublee Culmyca"
+            android:textColor="#f5a623"
+            android:textSize="14sp"
 
+            />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:text="#shaurya"
+            android:textColor="#000000"
+            android:textSize="9.5sp"
+            android:layout_centerHorizontal="true"/>
 
 
     </RelativeLayout>
