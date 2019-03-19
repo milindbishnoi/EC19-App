@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.elementsculmyca.ec19_app.aboutPage.AboutScreen">
+    android:background="#fff">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/abt_act_bar"
         android:background="#FFF">
-
-        <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:id="@+id/goback"
-            android:layout_alignParentLeft="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:rotation="180"
-            android:src="@drawable/vector_arrow" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,6 +29,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
             android:layout_gravity=""
             android:src="@drawable/ec_logo_2019" />
 
@@ -48,8 +41,7 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/abt_act_bar"
-        android:layout_marginTop="-1dp"></android.support.v4.view.ViewPager>
+        android:layout_below="@id/abt_act_bar"/>
 
     <ImageView
         android:layout_width="35dp"
@@ -57,7 +49,7 @@
         android:id="@+id/page1"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:layout_below="@id/abt_act_bar"
         android:rotation="180"
         android:src="@drawable/vector_arrow"
@@ -70,11 +62,12 @@
         android:id="@+id/page2"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:layout_below="@id/abt_act_bar"
         android:src="@drawable/vector_arrow"
         />
 
 
-
-</RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

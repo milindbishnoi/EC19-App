@@ -1,70 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
     >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
         >
 
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ec_logo_2019"
+            android:tint="#4a4a4a"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/ec-logo"
+            />
         <TextView
             android:id="@+id/ymca"
+            android:layout_below="@+id/ec-logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/overpass_bold"
-            android:text="JCBUST,YMCA Faridabad"
-            android:textColor="#111"
-            android:textSize="24dp" />
+            android:text="About JCBUST, YMCA Faridabad"
+            android:textColor="#4a4a4a"
+            android:textSize="23dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/ymca"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:id="@+id/logo_images"
+            >
 
         <ImageView
             android:id="@+id/ymcalogo"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_below="@+id/ymca"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/logo" />
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_below="@+id/ymca"
-            android:layout_marginStart="60dp"
-
-            android:layout_marginTop="20dp"
-            android:layout_toEndOf="@+id/ymcalogo"
-            android:backgroundTint="#ffffff"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="50dp"
             android:src="@drawable/golden_jubilee_logo_final" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
+            android:layout_below="@+id/logo_images"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:fontFamily="@font/overpass_bold"
             android:gravity="center"
             android:text="@string/aboutymca"
             android:textAlignment="center"
-            android:textSize="14dp" />
+            android:textSize="18sp" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/content"
+            android:layout_centerHorizontal="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/overpass_bold"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
             android:text="The Golden Jublee Culmyca"
             android:textColor="#f5a623"
+            android:id="@+id/tv_jublee"
             android:textSize="14sp"
 
             />
@@ -72,12 +93,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/tv_jublee"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:text="#shaurya"
             android:textColor="#000000"
             android:textSize="9.5sp"
             android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
     </RelativeLayout>
 
-</FrameLayout>
+    </FrameLayout>
+</ScrollView>
