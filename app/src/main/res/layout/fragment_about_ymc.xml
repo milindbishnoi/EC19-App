@@ -1,49 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="YMCA"
-            android:layout_marginTop="20dp"
-            android:textSize="28dp"
             android:id="@+id/ymca"
-            android:textColor="#111"
-            android:layout_centerHorizontal="true"
-            />
-        <TextView
-            android:layout_below="@id/ymca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UNIVERSITY"
-            android:textColor="#111"
-            android:textSize="32dp"
             android:layout_centerHorizontal="true"
-            />
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/overpass_bold"
+            android:text="JCBUST,YMCA Faridabad"
+            android:textColor="#111"
+            android:textSize="24dp" />
 
+        <ImageView
+            android:id="@+id/ymcalogo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/ymca"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/logo" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/ymca"
+            android:layout_marginStart="60dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/ymcalogo"
+            android:backgroundTint="#ffffff"
+            android:src="@drawable/golden_jubilee_logo_final" />
 
         <TextView
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/content"
+
             android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/overpass_bold"
+            android:gravity="center"
             android:text="@string/aboutymca"
             android:textAlignment="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textSize="16dp" />
+            android:textSize="14dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="The Golden Jublee Culmyca"
+            android:textColor="#f5a623"
+            android:textSize="14sp"
 
+            />
 
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:text="#shaurya"
+            android:textColor="#000000"
+            android:textSize="9.5sp"
+            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
 
 </FrameLayout>

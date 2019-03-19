@@ -22,4 +22,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_about_screen">AboutScreen</string>
 </resources>

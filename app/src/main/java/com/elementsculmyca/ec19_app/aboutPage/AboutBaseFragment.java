@@ -1,8 +1,10 @@
 package com.elementsculmyca.ec19_app.aboutPage;
 
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -42,31 +44,41 @@ public class AboutBaseFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static Fragment newInstance(int i) {
-        AboutBaseFragment fragment = new AboutBaseFragment();
-        Bundle args = new Bundle();
-        args.putInt( "", 2 );
-        fragment.setArguments( args );
-        return fragment;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate( R.layout.fragment_about_base, container, false );
         viewPager = root.findViewById( R.id.viewpager );
-        goback = root.findViewById( R.id.goback );
+
         leftPage = root.findViewById( R.id.page1 );
         rightPage = root.findViewById( R.id.page2 );
-        WizardPagerAdapter adapter = new WizardPagerAdapter();
+        AboutAdapter adapter = new AboutAdapter(getChildFragmentManager());
         viewPager.setAdapter( adapter );
-        //  viewPager.addOnPageChangeListener(onchange);
+         viewPager.addOnPageChangeListener(onchange);
+      check();
+        leftPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(0,true);
+
+            }
+        });
+        rightPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(1,true);
+            }
+        });
 
 
         return root;
 
     }
+    private int getCurrItem() {
+        return viewPager.getCurrentItem();
+    }
+
 
     void check() {
         if (viewPager.getCurrentItem() == 0) {
@@ -78,36 +90,42 @@ public class AboutBaseFragment extends Fragment {
         }
     }
 
-    private class WizardPagerAdapter extends PagerAdapter {
+   // private class WizardPagerAdapter extends PagerAdapter {
 
-        public Object instantiateItem(ViewGroup collection, int position) {
+     //   public WizardPagerAdapter(FragmentManager childFragmentManager) {
 
-            int resId = 0;
-            switch (position) {
-                case 0:
-                    resId = R.layout.fragment_about_culmyca;
-                    break;
-                case 1:
-                    resId = R.layout.fragment_about_ymc;
-                    break;
-            }
-            return resId;
-        }
+       // }
 
-        @Override
-        public int getCount() {
-            return 2;
-        }
+        //@//Override
+       // public int getCount() {
+       //     return 2;
+        //}
 
-        @Override
-        public boolean isViewFromObject(View arg0, Object arg1) {
-            return arg0 == arg1;
-        }
+        //public Object instantiateItem(ViewGroup collection, int position) {
+//
+  //          int resId = 0;
+    //        switch (position) {
+      //          case 0:
+        //            return new AboutYmca();
+         //       case 1:
+         //           return new AboutCulmyca();
+         //   }
+        //   return null;
+     //   }
 
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
+
+
+
+
+   //     @Override
+    //    public boolean isViewFromObject(View arg0, Object arg1) {
+      //      return arg0 == arg1;
+        //}
+
+        //@Override
+        //public void destroyItem(ViewGroup container, int position, Object object) {
             // No super
-        }
-    }
+      //  }
+    //}
 
 }
