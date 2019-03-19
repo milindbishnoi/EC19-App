@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Image_event"
+            android:background="@drawable/drama_x_9_ad_782">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="6dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/ec_logo_2019"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="181dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/overpass_black"
+                    android:text="Stage Play" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="Hot"
+                        android:fontFamily="@font/overpass_black"
+                        android:textColor="#ffffff"
+                        android:backgroundTint="#59d8d8d8"
+                        android:background="@drawable/button_background"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="Trending"
+                        android:fontFamily="@font/overpass_black"
+                        android:textColor="#ffffff"
+                        android:backgroundTint="#59d8d8d8"
+                        android:background="@drawable/button_background"
+                        android:layout_marginLeft="7dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textSize="20dp"
+                        android:text="Main Stage"
+                        android:fontFamily="@font/overpass_black"
+                        android:textColor="#ffffff"
+                        android:backgroundTint="#59d8d8d8"
+                        android:background="@drawable/button_background"
+                        android:layout_marginLeft="7dp"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="#ffffff"
+                    android:fontFamily="@font/overpass_black"
+                    android:text="Description"
+                    />
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#ffffff"
+                    android:text="Nukkad Natak is a form of theatrical performance and presentation in outdoor public spaces at the top of their voices with enthusiastic and energetic music."
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:textColor="#ffffff"
+                        android:fontFamily="@font/overpass_black"
+                        android:text="29 March 2019,"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:textColor="#ffffff"
+                        tools:text="Day 2"
+                        android:fontFamily="@font/overpass_black"
+                        android:layout_marginLeft="13dp"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#ffffff"
+                    android:text="Venue : "
+                    android:fontFamily="@font/overpass_black"
+                    />
+                <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                    android:fontFamily="@font/overpass_black"
+                android:textColor="#ffffff"
+                android:text="Main Stage"
+                />
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true"
+                    >
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_share_black_24dp" />
+
+                    <TextView
+                        android:layout_marginLeft="19dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="#ffffff"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/overpass_black"
+                        android:text="Register"
+                        android:id="@+id/register"
+                        android:background="@drawable/button_background"
+                        />
+                </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/frame"/>
+
+    </LinearLayout>
+</ScrollView>

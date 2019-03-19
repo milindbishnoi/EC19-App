@@ -20,14 +20,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".LoginScreen.LoginActivity"
             android:theme="@style/NoActionBar" />
         <activity
             android:name=".MainScreen.MainScreenActivity"
-            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"></activity>
     </application>
 
 </manifest>

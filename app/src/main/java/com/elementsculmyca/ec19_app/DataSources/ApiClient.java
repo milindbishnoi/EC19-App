@@ -1,4 +1,4 @@
-package com.elementsculmyca.ec19_app.Model;
+package com.elementsculmyca.ec19_app.DataSources;
 
 
 import retrofit2.Retrofit;
