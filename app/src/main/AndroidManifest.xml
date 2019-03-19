@@ -2,19 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.elementsculmyca.ec19_app">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/NoActionBar">
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".EventPage.EventMainPage"
-            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar" />
+            android:name=".EventPage.EventMainPage" />
         <activity
-            android:name=".SplashScreen.SplashScreenActivity"
-            android:theme="@style/NoActionBar">
+            android:name=".SplashScreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,11 +22,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginScreen.LoginActivity"
-            android:theme="@style/NoActionBar" />
+            android:name=".LoginScreen.LoginActivity" />
         <activity
-            android:name=".MainScreen.MainScreenActivity"
-            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"></activity>
+            android:name=".MainScreen.MainScreenActivity" />
+        <activity
+            android:name=".EventPage.SingleEventActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
     </application>
 
 </manifest>

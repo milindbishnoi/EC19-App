@@ -47,8 +47,6 @@ public class EventMainPage extends AppCompatActivity {
             public void onFailure(Call<EventDataModel> call, Throwable t) {
 
             }
-
-
         } );
 
     }
