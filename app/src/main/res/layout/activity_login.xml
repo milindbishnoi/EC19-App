@@ -77,8 +77,10 @@
                 android:background="@drawable/buttonshape"
                 android:backgroundTint="#d8d8d8"
                 android:fontFamily="@font/overpass_black"
-                android:hint="+91- Mobile Number"
-                android:paddingLeft="20dp" />
+                android:hint="Mobile Number"
+                android:inputType="phone"
+                android:paddingLeft="20dp"
+                android:id="@+id/phone_number"/>
 
             <ImageView
                 android:layout_width="60dp"
@@ -86,6 +88,7 @@
                 android:background="@drawable/buttonshape"
                 android:backgroundTint="#b4d75b69"
                 android:padding="5dp"
+                android:id="@+id/submit"
                 android:src="@drawable/ic_arrow"
                 android:tint="#434343" />
 
