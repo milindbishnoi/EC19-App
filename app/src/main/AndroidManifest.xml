@@ -31,6 +31,7 @@
             android:theme="@style/NoActionBarAppCompat"/>
         <activity
             android:name=".SingleEventScreen.SingleEventActivity"
+            android:theme="@style/NoActionBarAppCompat"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
     </application>
 

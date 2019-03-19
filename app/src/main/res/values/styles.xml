@@ -8,11 +8,15 @@
     <style name="NoActionBar" parent="@android:style/Theme.Holo.Light">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">#000000</item>
+
     </style>
 
     <style name="NoActionBarAppCompat" parent="@style/Base.Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">#000000</item>
+
     </style>
 
 </resources>
