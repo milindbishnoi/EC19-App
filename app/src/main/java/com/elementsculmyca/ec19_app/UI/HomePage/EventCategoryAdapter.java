@@ -1,5 +1,8 @@
 package com.elementsculmyca.ec19_app.UI.HomePage;
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,23 +10,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.elementsculmyca.ec19_app.R;
+import com.elementsculmyca.ec19_app.UI.ClubEventListPage.ClubEventListActivity;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class EventCategoryAdapter extends RecyclerView.Adapter<EventCategoryAdapter.Viewholder1> {
     public static String TAG="RecyclerVew";
 
-    private ArrayList<String> genre;
+    private ArrayList<ClubEventModel> itemsList;
+    private Context mContext;
 
-    public EventCategoryAdapter()
+    public EventCategoryAdapter(Context context, ArrayList<ClubEventModel> itemsList)
     {
-        genre =new ArrayList<String>();
-        genre.add("coding");
-        genre.add("photography");
-        genre.add("Dramatics");
-        genre.add("Arts");
+        this.itemsList = itemsList;
+        this.mContext = context;
+
     }
 
     @NonNull
@@ -38,14 +43,30 @@ public class EventCategoryAdapter extends RecyclerView.Adapter<EventCategoryAdap
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder1 viewholder, int i) {
-     viewholder.mgenres.setText(genre.get(i));
+        final ClubEventModel singleItem = itemsList.get(i);
+        String displayName;
+        if (singleItem.getDisplayName().length() <= 12) {
+            displayName = singleItem.getDisplayName();
+        } else {
+            displayName = singleItem.getDisplayName().substring(0, 9);
+            displayName += "...";
+        }
+        viewholder.mgenres.setText(displayName);
         viewholder.mimage.setImageResource(R.drawable.drama_x_9_ad_782);
+        viewholder.mimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mContext.startActivity(new Intent(mContext, ClubEventListActivity.class)
+                        .putExtra("clubname", singleItem.getClubName())
+                        .putExtra("clubdisplay", singleItem.getDisplayName()));
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return genre.size();
+        return itemsList.size();
     }
 
 

@@ -31,7 +31,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="35dp"
                 android:layout_marginLeft="15dp"
                 android:orientation="vertical">
 
@@ -51,7 +51,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="15sp"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
                         android:paddingTop="5dp"
@@ -65,7 +65,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="20dp"
+                        android:textSize="15sp"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
                         android:paddingTop="5dp"
@@ -84,7 +84,7 @@
                         android:paddingRight="15dp"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
-                        android:textSize="20dp"
+                        android:textSize="15sp"
                         android:text="Main Stage"
                         android:fontFamily="@font/overpass_black"
                         android:textColor="#ffffff"
@@ -185,7 +185,8 @@
                         android:textColor="#ffffff"
                         android:textSize="16sp"
                         android:fontFamily="@font/overpass_black"
-                        android:text="Register"
+                        android:text="Register Now!"
+                        android:backgroundTint="#99f5a623"
                         android:id="@+id/register"
                         android:background="@drawable/button_background"
                         />

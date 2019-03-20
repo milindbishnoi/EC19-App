@@ -20,12 +20,12 @@ public class SingleEventActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(registerButton.getText().equals("Register")) {
+                if(registerButton.getText().equals("Register Now!")) {
                     registerButton.setText("View Details");
                     FragmentManager manager = getSupportFragmentManager();
                     manager.beginTransaction().replace(R.id.frame, new RegisterEventFragment()).commit();
                 }else{
-                    registerButton.setText("Register");
+                    registerButton.setText("Register Now!");
                     FragmentManager manager = getSupportFragmentManager();
                     manager.beginTransaction().replace(R.id.frame, new DescriptionEventFragment()).commit();
                 }

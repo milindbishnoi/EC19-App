@@ -23,7 +23,6 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".UI.EventPage.EventMainPage" />
         <activity android:name=".UI.SplashScreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -23,8 +24,9 @@ public interface ApiInterface {
     @POST("eventbyid")
     Call<EventDataModel> getEventById(@Field("id") String id);
 
+    @FormUrlEncoded
     @POST("clubevent")
-    Call<ArrayList<ClubEventResponse>> getEventByClub(@Field("club") String club);
+    Call<ArrayList<EventDataModel>> getEventByClub(@Field("club") String club);
 
     @POST("mytickets")
     Call<ArrayList<TicketModel>> getTickets(@Field("phone") String phone);

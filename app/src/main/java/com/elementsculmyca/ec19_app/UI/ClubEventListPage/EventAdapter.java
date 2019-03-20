@@ -18,6 +18,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     {
         this.eventList = events;
     }
+    public EventAdapter()
+    {
+
+    }
 
     @Override
     public EventAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
