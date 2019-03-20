@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Member 1"
+            android:textColor="#4a4a4a"
+            android:textStyle="bold"
+            android:fontFamily="@font/overpass_black"/>
+        <Button
+            android:id="@+id/remove_mem"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/minus"
+            android:layout_marginLeft="22dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/overpass_black"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="5dp" />
+    <EditText
+        android:id="@+id/memname"
+        android:layout_below="@+id/memname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/buttonshape"
+        android:backgroundTint="#d8d8d8"
+        android:textSize="15dp"
+        android:paddingTop="10dp"
+        android:fontFamily="@font/overpass_black"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColorHint="#9b9b9b"/>
+    <TextView
+        android:layout_below="@+id/et1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="College"
+        android:textSize="15sp"
+        android:fontFamily="@font/overpass_black"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/memclg"
+        android:layout_below="@+id/memclg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter College Name"
+        android:inputType="phone"
+        android:background="@drawable/buttonshape"
+        android:textSize="15dp"
+        android:paddingTop="10dp"
+        android:fontFamily="@font/overpass_black"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="8dp"
+        android:textColorHint="#9b9b9b"/>
+    </LinearLayout>
+</LinearLayout>

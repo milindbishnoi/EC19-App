@@ -13,6 +13,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
+        android:id="@+id/parent_layout"
         >
 
         <TextView
@@ -52,16 +53,17 @@
           <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="Mobile No."
+              android:text="College"
               android:textSize="15sp"
               android:fontFamily="@font/overpass_black"
               android:layout_marginLeft="5dp"
               android:layout_marginTop="8dp"
               android:textStyle="bold"/>
           <EditText
+              android:id="@+id/clg"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:hint="Enter Phone Number"
+              android:hint="Enter College Name"
               android:inputType="phone"
               android:background="@drawable/buttonshape"
               android:textSize="15dp"
@@ -93,17 +95,26 @@
                   android:fontFamily="@font/overpass_black"
                   android:text="Add Members" />
               <Button
+                  android:id="@+id/add_mem"
                   android:layout_width="25dp"
                   android:layout_height="25dp"
                   android:layout_marginLeft="10dp"
                   android:layout_marginRight="6dp"
                   android:background="@drawable/plus"/>
-              <Button
-                  android:layout_width="25dp"
-                  android:layout_height="25dp"
-                  android:background="@drawable/minus"/>
+              <!--<Button-->
+                  <!--android:id="@+id/remove_mem"-->
+                  <!--android:layout_width="25dp"-->
+                  <!--android:layout_height="25dp"-->
+                  <!--android:background="@drawable/minus"/>-->
           </LinearLayout>
         </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/ll_current_mem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
