@@ -11,27 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TicketsDetails"/>
-
-        <activity android:name=".Tickets">
-
-        </activity>
-
-
-        <activity android:name=".EventPage.EventMainPage" />
-        <activity android:name=".SplashScreen.SplashScreenActivity">
+        <activity
+            android:name=".EventPage.EventMainPage" />
+        <activity
+            android:name=".SplashScreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".LoginScreen.LoginActivity" />
-        <activity android:name=".MainScreen.MainScreenActivity" />
+        <activity
+            android:name=".LoginScreen.LoginActivity" />
+        <activity
+            android:name=".MainScreen.MainScreenActivity" />
         <activity
             android:name=".EventPage.SingleEventActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
     </application>
 
 </manifest>

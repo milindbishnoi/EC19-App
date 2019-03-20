@@ -3,83 +3,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="25dp"
     tools:context="com.elementsculmyca.ec19_app.HomePage.HomeFragment">
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_view"
+            android:clickable="true"
+            android:background="@drawable/button_background"
+            android:backgroundTint="#d8d8d8" />
+
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="Elements Culmyca 2019"
-        android:textSize="25dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/overpass_black"
-        android:textStyle="bold" />
+        android:textColor="#4a4a4a"
+        android:textSize="18sp"
+        android:text="Categories"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:fontFamily="@font/overpass_black"
-        android:text="The extravangenza starts here"
-        android:textSize="12dp" />
-
-
-    <SearchView
+        />
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/categories_recyclerView"
+        android:layout_height="130dp">
+    </android.support.v7.widget.RecyclerView>
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/buttonshape"
-        android:queryHint="type here to search..." />
-
+        android:textSize="18sp"
+        android:fontFamily="@font/overpass_black"
+        android:layout_marginTop="10dp"
+        android:textColor="#4a4a4a"
+        android:text="Schedule"
+        />
     <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
+        >
+
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
+            android:text="Day1"
+            android:fontFamily="@font/overpass_black"
+            android:background="@drawable/buttonshapeday1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:id="@+id/btn_day1"
-            android:background="@drawable/buttonshape"
-            android:backgroundTint="#f5a623"
-            android:text="day1 " />
+            android:layout_marginLeft="60dp"
+            android:layout_weight="1"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/buttonshape"
-            android:backgroundTint="#f5a623"
-            android:text="day2 " />
+            android:text="Day2"
+            android:fontFamily="@font/overpass_black"
+            android:background="#f5a623"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/btn_day2"
+            android:layout_weight="1"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:text="Day3"
+            android:fontFamily="@font/overpass_black"
+            android:background="@drawable/buttonshapeday2"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/btn_day3"
             android:layout_weight="1"
-            android:background="@drawable/buttonshape"
-            android:backgroundTint="#f5a623"
-            android:text="day3 " />
-
+            android:layout_marginRight="60dp"
+            />
     </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/event_list"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:padding="10dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"/>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/schedule_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="358dp"
+        android:orientation="vertical">
     </android.support.v7.widget.RecyclerView>
-
-
+        </RelativeLayout>
 </LinearLayout>

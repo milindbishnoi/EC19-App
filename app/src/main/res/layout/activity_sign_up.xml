@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/drama_x_9_ad_782_cb"
+    >
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ec_logo_2019" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_below="@+id/logo"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/overpass_bold"
+        android:layout_centerHorizontal="true"
+        android:text="Elements Culmyca 19"
+        android:textStyle="bold"
+        android:id="@+id/tv_ec"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="15sp"
+        android:layout_below="@+id/tv_ec"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#f5a623"
+        android:fontFamily="@font/overpass_bold"
+        android:id="@+id/tv_saga"
+        android:text=" Saga of  Cultural + Technical Events "
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/tv_saga"
+        android:layout_centerHorizontal="true"
+        tools:text="Register"
+        android:layout_marginTop="15dp"
+        android:id="@+id/tv_register"
+        android:fontFamily="@font/overpass_bold"
+        android:textStyle="bold"
+        />
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/buttonshape"
+        android:backgroundTint="#00d8d8d8"
+        android:padding="5dp"
+        android:id="@+id/ll_edit_texts"
+        android:layout_below="@+id/tv_register"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="text"
+            android:background="@drawable/buttonshape"
+            android:backgroundTint="#d8d8d8"
+            android:hint="Name"
+            android:textStyle="bold"
+            android:fontFamily="@font/overpass_black"
+            android:paddingLeft="20sp"
+            android:id="@+id/name"
+            android:layout_weight="1"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="text"
+            android:background="@drawable/buttonshape"
+            android:backgroundTint="#d8d8d8"
+            android:hint="College"
+            android:fontFamily="@font/overpass_black"
+            android:paddingLeft="20sp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:id="@+id/college"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:id="@+id/ll_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buttonshape"
+            android:backgroundTint="#d8d8d8"
+            android:padding="5dp"
+            android:layout_weight="1">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonshape"
+                android:backgroundTint="#d8d8d8"
+                android:fontFamily="@font/overpass_black"
+                android:hint="Mobile Number"
+                android:textStyle="bold"
+                android:inputType="phone"
+                android:paddingLeft="20dp"
+                android:id="@+id/phone_number"/>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/buttonshape"
+                android:backgroundTint="#b4d75b69"
+                android:padding="5dp"
+                android:id="@+id/submit"
+                android:src="@drawable/ic_arrow"
+                android:tint="#434343" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="Login?"
+        android:id="@+id/tv_login"
+        android:layout_below="@+id/ll_edit_texts"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/tv_guest"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/tv_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/overpass_bold"
+        android:text="Continue as Guest"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/shaurya"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/overpass_black"
+            android:text="The Golden Jublee Culmyca"
+            android:textColor="#f5a623"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/shaurya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="14dp"
+            android:fontFamily="@font/overpass_black"
+            android:text="#shaurya"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+</RelativeLayout>
