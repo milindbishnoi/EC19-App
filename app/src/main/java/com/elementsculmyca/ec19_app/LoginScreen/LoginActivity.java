@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
@@ -23,10 +22,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.elementsculmyca.ec19_app.ClubEventListPage.ClubEventListActivity;
 import com.elementsculmyca.ec19_app.MainScreen.MainScreenActivity;
 import com.elementsculmyca.ec19_app.R;
-import com.elementsculmyca.ec19_app.SignUpActivity;
+import com.elementsculmyca.ec19_app.SignUpPage.SignUpActivity;
 
 import java.util.ArrayList;
 import java.util.List;

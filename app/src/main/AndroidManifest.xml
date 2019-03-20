@@ -38,7 +38,7 @@
             android:name=".EventPage.SingleEventActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity android:name=".ClubEventListPage.ClubEventListActivity" />
-        <activity android:name=".SignUpActivity"
+        <activity android:name=".SignUpPage.SignUpActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" ></activity>
     </application>
 
