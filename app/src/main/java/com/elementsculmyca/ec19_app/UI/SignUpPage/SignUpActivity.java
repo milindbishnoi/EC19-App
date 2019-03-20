@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -34,7 +35,9 @@ public class SignUpActivity extends AppCompatActivity implements FragmentOtpChec
     ImageView submit;
     EditText userName,userCollege,userPhone;
     private ProgressDialog mProgress;
-
+    private String musername;
+    private String muserphone;
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +71,13 @@ public class SignUpActivity extends AppCompatActivity implements FragmentOtpChec
                 if (checker) {
                     mProgress.show();
                     checkOTP();
+                    sharedPreferences=getSharedPreferences("login_details",0);
+                    musername = userName.getText().toString();
+                    muserphone= userPhone.getText().toString();
+                    SharedPreferences.Editor editor= sharedPreferences.edit();
+                    editor.putString("Username",musername);
+                    editor.putString("UserPhone",muserphone);
+                    editor.commit();
                 }
             }
         });

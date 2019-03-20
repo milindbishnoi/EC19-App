@@ -1,6 +1,7 @@
 package com.elementsculmyca.ec19_app.UI.MainScreen;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -28,6 +29,9 @@ public class MainScreenActivity extends AppCompatActivity {
                     switchToFragmentAbout();
                     break;
                 case R.id.navigation_logout:
+                    SharedPreferences preferences = getSharedPreferences("login_details", 0);
+                    preferences.edit().remove("Username").commit();
+                    preferences.edit().remove("UserPhone").commit();
                     startActivity(new Intent(MainScreenActivity.this,LoginActivity.class));
                     finish();
                     break;

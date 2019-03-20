@@ -49,7 +49,8 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textColorHint="#9b9b9b"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:id="@+id/user_name"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -76,7 +77,8 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textColorHint="#9b9b9b"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            />
 
         <RelativeLayout
             android:layout_width="wrap_content"
