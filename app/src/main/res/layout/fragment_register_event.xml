@@ -24,21 +24,6 @@
             android:textColor="#4a4a4a"
             android:textSize="20sp"
             android:textStyle="bold" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:id="@+id/layout_infater">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="8dp"
-        android:text="Member: 1"
-        android:fontFamily="@font/overpass_black"
-        android:textSize="15sp"
-        android:textColor="#4a4a4a"
-        android:id="@+id/mem_no"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,10 +47,10 @@
             android:hint="Enter Name"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
-            android:id="@+id/ld_reg_name"
             android:paddingBottom="10dp"
             android:textColorHint="#9b9b9b"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:id="@+id/user_name"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -78,7 +63,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/ld_reg_clg"
+            android:id="@+id/clg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -92,8 +77,9 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textColorHint="#9b9b9b"
-            android:textSize="15dp" />
-</LinearLayout>
+            android:textSize="15dp"
+            />
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -135,8 +121,8 @@
             android:id="@+id/ll_current_mem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:orientation="vertical" />
 
         <LinearLayout
