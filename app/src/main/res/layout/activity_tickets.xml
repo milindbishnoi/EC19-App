@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ec_logo_2019"
+            android:tint="#000"
+            android:id="@+id/imagelogo"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Tickets"
+            android:textSize="18sp"
+            android:textColor="#4a4a4a" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username : Shubham"
+            android:id="@+id/username"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/imagelogo"
+            android:layout_marginTop="20dp"
+            android:textSize="10sp"
+            android:textColor="#f5a623"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registered Mobile number: +91-67839686892"
+            android:layout_centerHorizontal="true"
+            android:textColor="#4a4a4a"
+            android:textSize="10sp"
+            android:layout_below="@+id/username"
+            android:id="@+id/number"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You Registered For"
+            android:textColor="#9b9b9b"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/number"
+            android:textSize="13sp"/>
+
+    </RelativeLayout>
+
+   <android.support.v7.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/recyclertickets">
+
+   </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
