@@ -20,11 +20,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10dp"
         android:layout_weight="0.07"
-        android:gravity="center"
         android:fontFamily="@font/overpass_bold"
-        android:layout_gravity="center_horizontal"
+        android:gravity="center"
         android:text="You have succesfully registered for this event"
         android:textColor="#9b9b9b"
         android:textSize="14sp" />
@@ -32,10 +32,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_weight="0.07"
         android:fontFamily="@font/overpass_bold"
-        android:layout_gravity="center"
         android:gravity="center"
         android:text="Registered Mobile No :+91-7840844065"
         android:textColor="#4a4a4a"
@@ -44,22 +44,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_gravity="center"
         android:layout_weight="0.07"
         android:fontFamily="@font/overpass_bold"
-        android:layout_gravity="center"
         android:gravity="center"
         android:text="Scan the QR code at Venue"
         android:textColor="#4a4a4a"
         android:textSize="12sp" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:src="@drawable/drama_x_9_ad_782_cb"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginBottom="50dp"
         android:layout_marginTop="40dp"
-        android:layout_weight="0.6"/>
+        android:layout_marginBottom="50dp"
+        android:layout_weight="0.6"
+        android:gravity="center"
+        android:src="@drawable/drama_x_9_ad_782_cb" />
 
 
 </LinearLayout>

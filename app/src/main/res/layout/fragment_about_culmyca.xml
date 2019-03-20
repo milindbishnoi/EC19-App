@@ -2,97 +2,98 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-   >
+    android:background="#fff">
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="30dp">
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ec_logo_2019"
-            android:tint="#4a4a4a"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/ec-logo"
-            />
-        <TextView
-            android:id="@+id/culmyca"
-            android:layout_below="@+id/ec-logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/overpass_bold"
-            android:text="About Elements Culmyca"
-            android:textColor="#4a4a4a"
-            android:textSize="23dp" />
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@+id/culmyca"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:id="@+id/logo_images"
-            >
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
 
             <ImageView
-                android:id="@+id/ymcalogo"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/logo" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="50dp"
-                android:src="@drawable/golden_jubilee_logo_final" />
-        </LinearLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/content"
-            android:layout_below="@+id/logo_images"
-            android:fontFamily="@font/overpass_bold"
-            android:layout_marginTop="20dp"
-            android:text="@string/aboutEc"
-            android:textAlignment="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textSize="18sp" />
+                android:id="@+id/ec-logo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ec_logo_2019"
+                android:tint="#4a4a4a" />
 
             <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+                android:id="@+id/culmyca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ec-logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/overpass_bold"
+                android:text="About Elements Culmyca"
+                android:textColor="#4a4a4a"
+                android:textSize="23dp" />
+
+            <LinearLayout
+                android:id="@+id/logo_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/culmyca"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ymcalogo"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logo" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="50dp"
+                    android:src="@drawable/golden_jubilee_logo_final" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo_images"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/overpass_bold"
+                android:text="@string/aboutEc"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/jublee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/content"
-            android:fontFamily="@font/overpass_bold"
-            android:text="The Golden Jublee Culmyca"
-            android:textColor="#f5a623"
-            android:id="@+id/jublee"
-            android:textSize="14sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/overpass_bold"
+                android:text="The Golden Jublee Culmyca"
+                android:textColor="#f5a623"
+                android:textSize="14sp"
 
-            />
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/jublee"
-            android:text="#shaurya"
-            android:textColor="#000000"
-            android:textSize="9.5sp"
-            android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jublee"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
+                android:text="#shaurya"
+                android:textColor="#000000"
+                android:textSize="9.5sp" />
+        </RelativeLayout>
     </FrameLayout>
 </ScrollView>

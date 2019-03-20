@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
 
-    tools:context="com.elementsculmyca.ec19_app.aboutPage.AboutBaseFragment">
+    tools:context=".UI.aboutPage.AboutBaseFragment">
 
 
     <android.support.v4.view.ViewPager
@@ -19,9 +19,9 @@
     </android.support.v4.view.ViewPager>
 
     <ImageView
+        android:id="@+id/page1"
         android:layout_width="28dp"
         android:layout_height="28dp"
-       android:id="@+id/page1"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
@@ -35,8 +35,8 @@
         android:layout_height="28dp"
 
         android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
         android:src="@drawable/vector_arrow" />
 
 

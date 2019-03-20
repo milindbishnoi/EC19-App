@@ -3,6 +3,12 @@
     package="com.elementsculmyca.ec19_app">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -11,10 +17,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".EventPage.EventMainPage" />
-        <activity
-            android:name=".SplashScreen.SplashScreenActivity">
+        <receiver android:name=".Util.IncomingSms">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".UI.EventPage.EventMainPage" />
+        <activity android:name=".UI.SplashScreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,17 +32,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginScreen.LoginActivity" />
+            android:name=".UI.LoginScreen.LoginActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name=".UI.MainScreen.MainScreenActivity" />
         <activity
-            android:name=".MainScreen.MainScreenActivity" />
-        <activity
-            android:name=".EventPage.SingleEventActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
-        <activity android:name=".TicketsDetails"/>
-        <activity android:name=".Tickets">
+            android:name=".UI.EventPage.SingleEventActivity"
+            android:theme="@style/NoActionBarAppCompat"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity android:name=".UI.ClubEventListPage.ClubEventListActivity">
 
         </activity>
-
+        <activity
+            android:name=".UI.SignUpPage.SignUpActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
     </application>
 
 </manifest>

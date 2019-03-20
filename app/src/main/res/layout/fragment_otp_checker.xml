@@ -23,24 +23,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_phone"
+            android:fontFamily="@font/overpass_black"
             android:padding="4dp"
             android:text="Phone Authentication"
             android:textAlignment="center"
             android:textColor="#000"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:fontFamily="@font/overpass_black"/>
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/ll_edit_texts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_heading_view"
-            android:layout_marginEnd="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="12dp">
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -65,8 +65,8 @@
                     android:id="@+id/et_otp_dig_2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/otp_edit_text_background"
                     android:inputType="number"
@@ -80,8 +80,8 @@
                     android:id="@+id/et_otp_dig_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/otp_edit_text_background"
                     android:inputType="number"
@@ -96,8 +96,8 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_weight="1">
 
                 <EditText
@@ -118,8 +118,8 @@
                     android:id="@+id/et_otp_dig_5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
                     android:layout_weight="1"
 
                     android:background="@drawable/otp_edit_text_background"
@@ -135,8 +135,8 @@
                     android:layout_width="0dp"
 
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
                     android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/otp_edit_text_background"
                     android:inputType="number"
@@ -164,11 +164,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_check_otp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
             android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
             android:text="A message with a verification code has been sent to your device. Please enter and Continue!!"
             android:textAlignment="center"
             android:textColor="#000"
@@ -187,12 +187,13 @@
             android:textSize="12dp" />
 
     </RelativeLayout>
+
     <ProgressBar
         android:id="@+id/pb_otp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 
 </RelativeLayout>
