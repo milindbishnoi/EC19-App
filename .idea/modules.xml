@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EC-19.iml" filepath="$PROJECT_DIR$/EC-19.iml" />
       <module fileurl="file://$PROJECT_DIR$/EC19-App.iml" filepath="$PROJECT_DIR$/EC19-App.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/EC19-App.iml" filepath="$PROJECT_DIR$/.idea/EC19-App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EC19-App.iml" filepath="$PROJECT_DIR$/EC19-App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
