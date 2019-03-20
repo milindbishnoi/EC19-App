@@ -28,6 +28,11 @@
         <activity
             android:name=".EventPage.SingleEventActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:name=".TicketsDetails"/>
+        <activity android:name=".Tickets">
+
+        </activity>
+
     </application>
 
 </manifest>
