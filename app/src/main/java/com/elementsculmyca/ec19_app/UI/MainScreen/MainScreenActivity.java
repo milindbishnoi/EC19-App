@@ -31,7 +31,7 @@ public class MainScreenActivity extends AppCompatActivity {
                 case R.id.navigation_logout:
                     SharedPreferences preferences = getSharedPreferences("login_details", 0);
                     preferences.edit().remove("Username").commit();
-                    preferences.edit().remove("UserPhone").commit();
+                    preferences.edit().remove("UserClg").commit();
                     startActivity(new Intent(MainScreenActivity.this,LoginActivity.class));
                     finish();
                     break;

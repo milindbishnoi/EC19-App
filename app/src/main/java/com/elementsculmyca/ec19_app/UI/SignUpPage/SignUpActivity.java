@@ -36,7 +36,7 @@ public class SignUpActivity extends AppCompatActivity implements FragmentOtpChec
     EditText userName,userCollege,userPhone;
     private ProgressDialog mProgress;
     private String musername;
-    private String muserphone;
+    private String muserclg;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +73,10 @@ public class SignUpActivity extends AppCompatActivity implements FragmentOtpChec
                     checkOTP();
                     sharedPreferences=getSharedPreferences("login_details",0);
                     musername = userName.getText().toString();
-                    muserphone= userPhone.getText().toString();
+                    muserclg= userCollege.getText().toString();
                     SharedPreferences.Editor editor= sharedPreferences.edit();
                     editor.putString("Username",musername);
-                    editor.putString("UserPhone",muserphone);
+                    editor.putString("UserClg",muserclg);
                     editor.commit();
                 }
             }

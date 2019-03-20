@@ -36,7 +36,7 @@ public class RegisterEventFragment extends Fragment {
         userclg=(EditText) view.findViewById(R.id.clg);
         sharedPreferences= this.getActivity().getSharedPreferences("login_details",0);
         username.setText(sharedPreferences.getString("Username",""));
-        userclg.setText(sharedPreferences.getString("UserPhone",""));
+        userclg.setText(sharedPreferences.getString("UserClg",""));
         return view;
     }
 
