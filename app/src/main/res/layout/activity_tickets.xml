@@ -6,12 +6,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/ec_logo_2019"
             android:tint="#000"
+            android:layout_marginLeft="5dp"
             android:id="@+id/imagelogo"
             />
 
@@ -20,43 +22,78 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:text="Tickets"
-            android:textSize="18sp"
+            android:textSize="25sp"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/overpass_black"
             android:textColor="#4a4a4a" />
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username : Shubham"
-            android:id="@+id/username"
-            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
             android:layout_below="@+id/imagelogo"
             android:layout_marginTop="20dp"
-            android:textSize="10sp"
-            android:textColor="#f5a623"/>
+            android:layout_centerHorizontal="true"
+            android:id="@+id/ll_username">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registered Mobile number: +91-67839686892"
+            android:text="Username : "
+            android:fontFamily="@font/overpass_black"
+            android:id="@+id/tv_username"
+            android:textSize="13sp"
+            android:textColor="#f5a623"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shubham Sharma"
+                android:fontFamily="@font/overpass_black"
+                android:id="@+id/tv_name"
+                android:textSize="13sp"
+                android:textColor="#f5a623"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_centerHorizontal="true"
+            android:layout_below="@+id/ll_username"
+            android:id="@+id/ll_phone"
+            android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registered Mobile number: "
             android:textColor="#4a4a4a"
-            android:textSize="10sp"
+            android:textSize="13sp"
+            android:fontFamily="@font/overpass_black"
             android:layout_below="@+id/username"
-            android:id="@+id/number"/>
+            android:id="@+id/tv_number"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+91-67839686892"
+                android:fontFamily="@font/overpass_black"
+                android:textColor="#4a4a4a"
+                android:textSize="13sp"
+                android:layout_below="@+id/username"
+                android:id="@+id/number"/>
+        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="You Registered For"
             android:textColor="#9b9b9b"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/overpass_black"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/number"
-            android:textSize="13sp"/>
+            android:layout_below="@id/ll_phone"
+            android:textSize="20sp"/>
 
     </RelativeLayout>
 
    <android.support.v7.widget.RecyclerView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:id="@+id/recyclertickets">
-
-   </android.support.v7.widget.RecyclerView>
+       android:id="@+id/recyclertickets"/>
 
 </LinearLayout>

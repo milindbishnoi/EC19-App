@@ -1,37 +1,37 @@
-package com.elementsculmyca.ec19_app;
+package com.elementsculmyca.ec19_app.MyTicketsPage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.elementsculmyca.ec19_app.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tickets extends AppCompatActivity {
+public class MyTicketsActivity extends AppCompatActivity {
 
 
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
 
-    private List<TicketsDetails> ticketsDetails;
+    private List<TicketsModel> ticketsDetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tickets);
 
         recyclerView= (RecyclerView) findViewById(R.id.recyclertickets);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        recyclerView.setLayoutManager(new LinearLayoutManager(MyTicketsActivity.this,LinearLayoutManager.VERTICAL,false));
         ticketsDetails= new ArrayList<>();
         for (int i =0;i<=5;i++){
-            TicketsDetails ticketDetail= new TicketsDetails(
+            TicketsModel ticketDetail= new TicketsModel(
                     "Code Relay" + (i+1),
-                    "Fees:",
-                    "Venue:",
-                    "Name:",
+                    "80",
+                    "Lab",
+                    "Shubham Sharma",
                     "PAID"
             );
             ticketsDetails.add(ticketDetail);

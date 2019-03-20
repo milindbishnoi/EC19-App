@@ -12,18 +12,18 @@ import com.elementsculmyca.ec19_app.R;
 
 import java.util.ArrayList;
 
-public class AdapterCategoriesRecyclerView extends RecyclerView.Adapter<AdapterCategoriesRecyclerView.Viewholder1> {
+public class EventCategoryAdapter extends RecyclerView.Adapter<EventCategoryAdapter.Viewholder1> {
     public static String TAG="RecyclerVew";
 
     private ArrayList<String> genre;
 
-    public AdapterCategoriesRecyclerView()
+    public EventCategoryAdapter()
     {
         genre =new ArrayList<String>();
-        genre.add("manan");
-        genre.add("manan");
-        genre.add("manan");
-        genre.add("manan");
+        genre.add("coding");
+        genre.add("photography");
+        genre.add("Dramatics");
+        genre.add("Arts");
     }
 
     @NonNull

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="12dp"
+    app:cardBackgroundColor="#d8d8d8"
+    app:cardCornerRadius="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/details"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/eventname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Code Relay"
+                    android:fontFamily="@font/overpass_black"
+                    android:textColor="#4a4a4a"
+                    android:textSize="18sp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fees: Rs."
+                    android:fontFamily="@font/overpass_black"
+                    android:textColor="#4a4a4a"
+                    android:textSize="10sp" />
+                    <TextView
+                        android:id="@+id/eventfees"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50"
+                        android:fontFamily="@font/overpass_black"
+                        android:textColor="#4a4a4a"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Venue: "
+                        android:fontFamily="@font/overpass_black"
+                        android:textColor="#4a4a4a"
+                        android:textSize="10sp" />
+                    <TextView
+                        android:id="@+id/eventvenue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LAB-CC-08"
+                        android:fontFamily="@font/overpass_black"
+                        android:textColor="#4a4a4a"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name: "
+                        android:fontFamily="@font/overpass_black"
+                        android:textColor="#4a4a4a"
+                        android:textSize="10sp" />
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Prerna Suneja"
+                        android:fontFamily="@font/overpass_black"
+                        android:textColor="#4a4a4a"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/feestatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="PAID"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/overpass_black"
+                    android:textColor="#417505"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/overpass_black"
+                    android:text="Please be present at venue"
+                    android:textColor="#f5a623"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/verticalline"
+                    android:layout_gravity="center_vertical"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="match_parent"
+                    >
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@drawable/ic_launcher_background"
+                        android:id="@+id/qrcode"
+                        android:layout_alignParentRight="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="Event Time"
+                        android:id="@+id/tv_time"
+                        android:fontFamily="@font/overpass_bold"
+                        android:layout_below="@+id/qrcode"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="2:30 PM"
+        android:textStyle="bold"
+        android:fontFamily="@font/overpass_black"
+        android:layout_below="@+id/tv_time"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        />
+</RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+</android.support.v7.widget.CardView>

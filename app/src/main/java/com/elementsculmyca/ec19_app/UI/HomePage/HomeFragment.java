@@ -31,7 +31,7 @@ public class HomeFragment extends Fragment {
     SearchView searchView;
     private ProgressBar bar;
     private EventAdapter adapter;
-    private AdapterCategoriesRecyclerView adapterCategoriesRecyclerView;
+    private EventCategoryAdapter adapterCategoriesRecyclerView;
     private RecyclerView recyclerView;
     Button day1;
     @Override
@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
         });
 
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
-        adapterCategoriesRecyclerView=new AdapterCategoriesRecyclerView();
+        adapterCategoriesRecyclerView=new EventCategoryAdapter();
         RecyclerView categoryRecycleview = (RecyclerView) root.findViewById(R.id.categories_recyclerView);
         categoryRecycleview.setLayoutManager(linearLayoutManager);
         categoryRecycleview.setAdapter(adapterCategoriesRecyclerView);

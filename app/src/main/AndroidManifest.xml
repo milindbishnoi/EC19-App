@@ -37,7 +37,6 @@
         <activity android:name=".UI.MainScreen.MainScreenActivity" />
         <activity
             android:name=".UI.EventPage.SingleEventActivity"
-            android:theme="@style/NoActionBarAppCompat"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity android:name=".UI.ClubEventListPage.ClubEventListActivity">
 

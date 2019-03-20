@@ -1,11 +1,11 @@
-package com.elementsculmyca.ec19_app;
+package com.elementsculmyca.ec19_app.MyTicketsPage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class TicketsDetails extends AppCompatActivity{
+public class TicketsModel extends AppCompatActivity{
 
-    public TicketsDetails(){
+    public TicketsModel(){
         super();
     }
     private String event;
@@ -34,7 +34,7 @@ public class TicketsDetails extends AppCompatActivity{
         this.status = status;
     }
 
-    public TicketsDetails(String event, String fees, String venue, String name, String status) {
+    public TicketsModel(String event, String fees, String venue, String name, String status) {
         this.event=event;
         this.fees=fees;
         this.venue=venue;
