@@ -1,8 +1,6 @@
 package com.elementsculmyca.ec19_app.HomePage;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -36,8 +34,6 @@ public class HomeFragment extends Fragment {
     private EventAdapter adapter;
     private AdapterCategoriesRecyclerView adapterCategoriesRecyclerView;
     private RecyclerView recyclerView;
-    private ArrayList<String> genres;
-    private  ArrayList<Bitmap> mImages;
     Button day1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,9 +54,9 @@ public class HomeFragment extends Fragment {
                 startActivity(new Intent(getActivity(),SingleEventActivity.class));
             }
         });
-        addData();
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getActivity().getBaseContext(), LinearLayoutManager.HORIZONTAL,false);
-        adapterCategoriesRecyclerView=new AdapterCategoriesRecyclerView(mImages,genres, getActivity().getBaseContext());
+
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
+        adapterCategoriesRecyclerView=new AdapterCategoriesRecyclerView();
         RecyclerView categoryRecycleview = (RecyclerView) root.findViewById(R.id.categories_recyclerView);
         categoryRecycleview.setLayoutManager(linearLayoutManager);
         categoryRecycleview.setAdapter(adapterCategoriesRecyclerView);
@@ -91,22 +87,5 @@ public class HomeFragment extends Fragment {
         } );
 
     }
-    public void addData()
-    {
-        genres.add("MANAN");
-        mImages.add(BitmapFactory.decodeResource(HomeFragment.this.getResources(), R.raw.drama_x_9_ad_78png));
-        genres.add("MANAN");
-        mImages.add(BitmapFactory.decodeResource(HomeFragment.this.getResources(), R.raw.drama_x_9_ad_78png));
-        genres.add("MANAN");
-        mImages.add(BitmapFactory.decodeResource(HomeFragment.this.getResources(), R.raw.drama_x_9_ad_78png));
-        genres.add("MANAN");
-        mImages.add(BitmapFactory.decodeResource(HomeFragment.this.getResources(), R.raw.drama_x_9_ad_78png));
-        genres.add("MANAN");
-        mImages.add(BitmapFactory.decodeResource(HomeFragment.this.getResources(), R.raw.drama_x_9_ad_78png));
-        genres.add("MANAN");
-        mImages.add(BitmapFactory.decodeResource(HomeFragment.this.getResources(), R.raw.drama_x_9_ad_78png));
-        genres.add("MANAN");
-        mImages.add(BitmapFactory.decodeResource(HomeFragment.this.getResources(), R.raw.drama_x_9_ad_78png));
 
-    }
 }
