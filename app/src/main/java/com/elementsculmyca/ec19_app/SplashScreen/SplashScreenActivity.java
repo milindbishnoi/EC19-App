@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import com.elementsculmyca.ec19_app.LoginScreen.LoginActivity;
 import com.elementsculmyca.ec19_app.R;
+import com.elementsculmyca.ec19_app.SignUpActivity;
 
 public class SplashScreenActivity extends Activity {
     public static int SPLASH_TIME_OUT = 3000;

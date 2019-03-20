@@ -1,68 +1,66 @@
-package com.elementsculmyca.ec19_app.LoginScreen;
+package com.elementsculmyca.ec19_app;
 
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.elementsculmyca.ec19_app.ClubEventListPage.ClubEventListActivity;
+import com.elementsculmyca.ec19_app.LoginScreen.FragmentOtpChecker;
+import com.elementsculmyca.ec19_app.LoginScreen.LoginActivity;
 import com.elementsculmyca.ec19_app.MainScreen.MainScreenActivity;
-import com.elementsculmyca.ec19_app.R;
-import com.elementsculmyca.ec19_app.SignUpActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.elementsculmyca.ec19_app.LoginScreen.FragmentOtpChecker.REQUEST_ID_MULTIPLE_PERMISSIONS;
 
-public class LoginActivity extends Activity implements FragmentOtpChecker.otpCheckStatus {
-    TextView guestLogin,signUp;
-    EditText phoneNumber;
-    private ProgressDialog mProgress;
+public class SignUpActivity extends AppCompatActivity implements FragmentOtpChecker.otpCheckStatus  {
+    TextView login,guest;
     ImageView submit;
+    EditText userName,userCollege,userPhone;
+    private ProgressDialog mProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        phoneNumber = findViewById(R.id.phone_number);
-        submit = findViewById(R.id.submit);
-        signUp=findViewById(R.id.sign_up);
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
-            }
-        });
+        setContentView(R.layout.activity_sign_up);
+        login=findViewById(R.id.tv_login);
+        submit=findViewById(R.id.submit);
+        guest=findViewById(R.id.tv_guest);
+        userName=findViewById(R.id.name);
+        userCollege=findViewById(R.id.college);
+        userPhone=findViewById(R.id.phone_number);
         mProgress = new ProgressDialog(this);
         mProgress.setMessage("Registering You");
         mProgress.setTitle("Please Wait");
         mProgress.setCanceledOnTouchOutside(false);
-        Window window = getWindow();
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        String color = "#0f0f0f";
-        window.setStatusBarColor(Color.parseColor(color));
-
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+            }
+        });
+        guest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignUpActivity.this,MainScreenActivity.class));
+            }
+        });
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,40 +68,10 @@ public class LoginActivity extends Activity implements FragmentOtpChecker.otpChe
                 if (checker) {
                     mProgress.show();
                     checkOTP();
-                        }
-            }
-        });
-        guestLogin = findViewById(R.id.button_guest);
-
-        guestLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, MainScreenActivity.class));
+                }
             }
         });
     }
-
-    private Boolean validateCredentials() {
-        if (!isNetworkAvailable()) {
-            Toast.makeText(this, "Check your internet connection", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        if (phoneNumber.getText().toString().equals("")) {
-            phoneNumber.setError("Enter a Phone Number");
-            return false;
-        }
-        if (!Patterns.PHONE.matcher(phoneNumber.getText().toString()).matches()) {
-            phoneNumber.setError("Enter a valid Phone Number");
-            return false;
-        }
-        if (phoneNumber.getText().toString().length() != 10) {
-            phoneNumber.setError("Enter a valid Phone Number");
-            return false;
-        }
-
-        return true;
-    }
-
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -112,11 +80,11 @@ public class LoginActivity extends Activity implements FragmentOtpChecker.otpChe
     }
     private void checkOTP() {
         checkAndRequestPermissions();
-        if(ContextCompat.checkSelfPermission(LoginActivity.this, android.Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(SignUpActivity.this, android.Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED){
             FragmentManager fm = getFragmentManager();
             FragmentOtpChecker otpChecker = new FragmentOtpChecker();
             Bundle bundle = new Bundle();
-            bundle.putString("phone", phoneNumber.getText().toString());
+            bundle.putString("phone", userPhone.getText().toString());
             otpChecker.setArguments(bundle);
             otpChecker.show(fm, "otpCheckerFragment");
         }
@@ -143,10 +111,39 @@ public class LoginActivity extends Activity implements FragmentOtpChecker.otpChe
                     REQUEST_ID_MULTIPLE_PERMISSIONS);
         }
     }
+    private Boolean validateCredentials() {
+        if (!isNetworkAvailable()) {
+            Toast.makeText(SignUpActivity.this, "Check your Internet Connection", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (userName.getText().toString().equals("")) {
+            userName.setError("Enter a User Name");
+            return false;
+        }
+
+        if (userPhone.getText().toString().equals("")) {
+            userPhone.setError("Enter a Phone Number");
+            return false;
+        }
+        if (!Patterns.PHONE.matcher(userPhone.getText().toString()).matches()) {
+            userPhone.setError("Enter a valid Phone Number");
+            return false;
+        }
+        if (userPhone.getText().toString().length() != 10) {
+            userPhone.setError("Enter a valid Phone Number");
+            return false;
+        }
+        if (userCollege.getText().toString().equals("")) {
+            userCollege.setError("Enter a College Name");
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public void updateResult(boolean status) {
         if (status) {
-            startActivity(new Intent(LoginActivity.this,MainScreenActivity.class));
+            startActivity(new Intent(SignUpActivity.this,MainScreenActivity.class));
             finish();
         } else {
             mProgress.dismiss();
@@ -159,7 +156,7 @@ public class LoginActivity extends Activity implements FragmentOtpChecker.otpChe
             FragmentManager fm = getFragmentManager();
             FragmentOtpChecker otpChecker = new FragmentOtpChecker();
             Bundle bundle = new Bundle();
-            bundle.putString("phone", phoneNumber.getText().toString());
+            bundle.putString("phone", userPhone.getText().toString());
             otpChecker.setArguments(bundle);
             otpChecker.show(fm, "otpCheckerFragment");
         }

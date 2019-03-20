@@ -31,12 +31,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginScreen.LoginActivity" />
+        <activity android:name=".LoginScreen.LoginActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" ></activity>
         <activity android:name=".MainScreen.MainScreenActivity" />
         <activity
             android:name=".EventPage.SingleEventActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-        <activity android:name=".ClubEventListPage.ClubEventListActivity"></activity>
+        <activity android:name=".ClubEventListPage.ClubEventListActivity" />
+        <activity android:name=".SignUpActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" ></activity>
     </application>
 
 </manifest>
