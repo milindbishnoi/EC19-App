@@ -39,7 +39,9 @@
         android:id="@+id/categories_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:orientation="horizontal"></android.support.v7.widget.RecyclerView>
+        android:orientation="horizontal">
+
+    </android.support.v7.widget.RecyclerView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,11 +51,11 @@
         android:text="Schedule"
         android:textColor="#4a4a4a"
         android:textSize="18sp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
 
         <Button
@@ -66,7 +68,8 @@
             android:layout_weight="1"
             android:background="@drawable/buttonshapeday1"
             android:fontFamily="@font/overpass_black"
-            android:text="Day1" />
+            android:text="Day1"
+            />
 
         <Button
             android:id="@+id/btn_day2"
@@ -92,23 +95,14 @@
             android:text="Day3" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
 
-        <ProgressBar
-            android:id="@+id/pb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:visibility="gone" />
+    <android.support.v4.view.ViewPager
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/days_viewpager"
+    >
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/schedule_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical"></android.support.v7.widget.RecyclerView>
-    </RelativeLayout>
+
+     </android.support.v4.view.ViewPager>
+
 </LinearLayout>

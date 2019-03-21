@@ -1,8 +1,12 @@
 package com.elementsculmyca.ec19_app.UI.HomePage;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,6 +20,7 @@ import android.widget.SearchView;
 import com.elementsculmyca.ec19_app.DataSources.DataModels.EventDataModel;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiClient;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiInterface;
+import com.elementsculmyca.ec19_app.DayAdapter;
 import com.elementsculmyca.ec19_app.R;
 import com.elementsculmyca.ec19_app.UI.ClubEventListPage.EventAdapter;
 import com.elementsculmyca.ec19_app.UI.EventPage.SingleEventActivity;
@@ -29,30 +34,82 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
     private ApiInterface apiInterface;
     SearchView searchView;
+    ViewPager viewPager;
     private ProgressBar bar;
     private EventAdapter adapter;
     private ArrayList<ClubEventModel> allSampleData = new ArrayList<ClubEventModel>();
     private RecyclerView recyclerView;
-    Button day1;
+    Button day1,day2,day3;
+
+
+
+
+    ViewPager.OnPageChangeListener onchange = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int i, float v, int i1) {
+
+        }
+
+        @Override
+        public void onPageSelected(int i) {
+
+
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int i) {
+
+        }
+    };
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View root = inflater.inflate( R.layout.fragment_main_screen, container, false );
+        viewPager= root.findViewById(R.id.days_viewpager);
         searchView=  root.findViewById(R.id.search_view);
         searchView.setQueryHint("Search for Events");
         apiInterface = ApiClient.getClient().create( ApiInterface.class );
-        recyclerView=root.findViewById(R.id.schedule_recyclerView);
-        bar = (ProgressBar)root.findViewById(R.id.pb);
-        bar.setVisibility(View.VISIBLE);
-        getAllEvents();
+       // recyclerView=root.findViewById(R.id.schedule_recyclerView);
+       // bar = (ProgressBar)root.findViewById(R.id.pb);
+        //bar.setVisibility(View.VISIBLE);
+      //  getAllEvents();
         day1=root.findViewById(R.id.btn_day1);
+        day2=root.findViewById(R.id.btn_day2);
+        day3=root.findViewById(R.id.btn_day3);
+        DayAdapter adapterday= new DayAdapter(getChildFragmentManager());
+        viewPager.setAdapter(adapterday);
+        viewPager.addOnPageChangeListener(onchange);
+
+
         day1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(),SingleEventActivity.class));
+            public void onClick(View v) {
+                viewPager.setCurrentItem(0,true);
+
             }
         });
+
+        day2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(1,true);
+            }
+        });
+
+        day3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(2,true);
+            }
+        });
+      //  day1.setOnClickListener(new View.OnClickListener() {
+            //@Override
+       //     public void onClick(View view) {
+       //         startActivity(new Intent(getActivity(),SingleEventActivity.class));
+            //}
+       // });
         addData();
         EventCategoryAdapter adapter = new EventCategoryAdapter(getActivity(), allSampleData);
 
@@ -61,6 +118,10 @@ public class HomeFragment extends Fragment {
         categoryRecycleview.setLayoutManager(linearLayoutManager);
         categoryRecycleview.setAdapter(adapter);
         return root;
+    }
+
+    private int getCurrItem() {
+        return viewPager.getCurrentItem();
     }
 
     void getAllEvents() {
