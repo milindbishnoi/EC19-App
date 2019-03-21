@@ -140,6 +140,7 @@
         android:textColor="#ffffff"
         android:textStyle="bold"
         android:text="Login?"
+        android:fontFamily="@font/overpass_bold"
         android:id="@+id/tv_login"
         android:layout_below="@+id/ll_edit_texts"
         android:layout_centerHorizontal="true"

@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
-            android:text="Member: "
+            android:text="Member "
             android:textColor="#4a4a4a"
             android:id="@+id/tv_member"
             android:fontFamily="@font/overpass_black"/>
@@ -39,7 +39,7 @@
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:background="@drawable/minus"
-            android:layout_marginLeft="22dp"/>
+           />
         </RelativeLayout>
 
     </LinearLayout>

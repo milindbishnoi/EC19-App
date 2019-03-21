@@ -38,7 +38,7 @@
         android:layout_below="@id/elements_cul"
         android:layout_centerHorizontal="true"
         android:fontFamily="@font/overpass_black"
-        android:text="The Annual Cultural Fest of JCBUST, YMCA"
+        android:text="The Annual CulTech Fest of JCBUST, YMCA"
         android:textColor="#ffffff"
         android:textSize="16sp" />
 

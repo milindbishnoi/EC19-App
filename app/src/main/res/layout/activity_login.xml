@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:id="@+id/sign_up"
-            android:text="New User? Sign Up."
+            android:text="New User? Sign Up!"
             android:textColor="#fff"
             android:fontFamily="@font/overpass_black"
             />
