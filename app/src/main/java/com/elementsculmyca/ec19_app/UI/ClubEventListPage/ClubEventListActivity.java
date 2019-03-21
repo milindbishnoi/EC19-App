@@ -1,5 +1,8 @@
 package com.elementsculmyca.ec19_app.UI.ClubEventListPage;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,32 +11,45 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.elementsculmyca.ec19_app.DataSources.DataModels.EventDataModel;
+import com.elementsculmyca.ec19_app.DataSources.DataModels.PrizeModel;
+import com.elementsculmyca.ec19_app.DataSources.DataModels.TimingsModel;
+import com.elementsculmyca.ec19_app.DataSources.LocalServices.AppDatabase;
+import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventLocalModel;
+import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventsDao_Impl;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiClient;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiInterface;
 import com.elementsculmyca.ec19_app.R;
+import com.elementsculmyca.ec19_app.UI.HomePage.ClubEventModel;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ClubEventListActivity extends AppCompatActivity {
-    private EventAdapter adapter;
+    private EventAdapter eventAdapter;
     private RecyclerView recyclerView;
+    List<EventLocalModel> data;
+    ArrayList<EventDataModel> eventList;
     private ProgressBar bar;
     private String clubName;
     private ApiInterface apiInterface;
     private TextView clubDisplayName,clubDescpTextView;
+    EventsDao_Impl dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_club_event_list);
+        dao=new EventsDao_Impl(AppDatabase.getAppDatabase(ClubEventListActivity.this));
         clubName = getIntent().getStringExtra("clubname");
         String displayName = getIntent().getStringExtra("clubdisplay");
         bar = (ProgressBar)findViewById(R.id.pb);
@@ -76,33 +92,55 @@ public class ClubEventListActivity extends AppCompatActivity {
         } else if (clubName.equals("Vivekanand Manch")) {
             clubDescpTextView.setText("Inspired by Swami Vivekanand this is the category where cultural and fun activities fuse with social values. Witness the Social Bonanza.");
         }
-
-
-        bar.setVisibility(View.VISIBLE);
         recyclerView=findViewById(R.id.events_list);
         apiInterface = ApiClient.getClient().create( ApiInterface.class );
-        getEventsByClubName();
+        if(dao.countUsers()==0&&!isNetworkAvailable())
+            Toast.makeText(ClubEventListActivity.this, "Check your Internet Connection", Toast.LENGTH_SHORT).show();
+        else
+        getEventsByClubName(clubName);
     }
-    void getEventsByClubName() {
-        Call<ArrayList<EventDataModel>> call = apiInterface.getEventByClub(clubName);
-        call.enqueue( new Callback<ArrayList<EventDataModel>>() {
-            @Override
-            public void onResponse(Call<ArrayList<EventDataModel>> call, Response<ArrayList<EventDataModel>> response) {
-                ArrayList<EventDataModel> eventList= response.body();
-                adapter = new EventAdapter(eventList);
-                recyclerView.setLayoutManager(new LinearLayoutManager(ClubEventListActivity.this,LinearLayoutManager.VERTICAL,false));
-                recyclerView.setAdapter(adapter);
-                bar.setVisibility(View.GONE);
-
+    void getEventsByClubName(String clubName) {
+        eventList=new ArrayList<>();
+        data = dao.getEventByClubName(clubName);
+        for (int i = 0; i < data.size(); i++) {
+            PrizeModel prizes= new PrizeModel();
+            List<String> prizeList = Arrays.asList(data.get(i).getPrizes().split("%"));
+            if(prizeList.size()==1){
+                prizes.setPrize1(prizeList.get(0));
+            }else if(prizeList.size()==2){
+                prizes.setPrize1(prizeList.get(0));
+                prizes.setPrize2(prizeList.get(1));
+            }else if(prizeList.size()==3){
+                prizes.setPrize1(prizeList.get(0));
+                prizes.setPrize2(prizeList.get(1));
+                prizes.setPrize3(prizeList.get(2));
             }
+            TimingsModel time= new TimingsModel(data.get(i).getStartTime(),data.get(i).getEndTime());
 
-            @Override
-            public void onFailure(Call<ArrayList<EventDataModel>> call, Throwable t) {
-                Log.e( "Response", call.request().url() + "" + call.request().body() );
+            EventDataModel event= new EventDataModel( data.get( i ).getId(),
+                    data.get( i ).getTitle() + "",
+                    data.get( i ).getClubname() + "",
+                    data.get( i ).getCategory() + "",
+                    data.get( i ).getDesc() + "",
+                    data.get( i ).getRules() + "",
+                    data.get( i ).getVenue() + "",
+                    data.get( i ).getPhotolink() + "",
+                    data.get( i ).getFee(),
+                    time,
+                    prizes,
+                    data.get(i).getEventType() + "",
+                    data.get(i).getHitcount() );
+            eventList.add(event);
+        }
+        eventAdapter = new EventAdapter(eventList,ClubEventListActivity.this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(ClubEventListActivity.this,LinearLayoutManager.VERTICAL,false));
+        recyclerView.setAdapter(eventAdapter);
 
-            }
-
-        } );
-
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }

@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:id="@+id/ll"
             android:layout_marginTop="10dp"
             android:layout_marginRight="1dp"
             android:layout_marginBottom="10dp"
@@ -116,6 +117,7 @@
                 android:layout_below="@+id/trending"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="5dp"
+                android:id="@+id/event_type"
                 android:fontFamily="@font/overpass_bold"
                 android:text="Team Event"
                 android:textColor="#fff"
@@ -130,10 +132,11 @@
                 android:backgroundTint="#80f5a623"
                 android:fontFamily="@font/overpass_bold"
                 android:paddingLeft="20dp"
+                android:id="@+id/register"
                 android:paddingTop="10dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="10dp"
-                android:text="Register!"
+                android:text="Register Now!"
                 android:textColor="#fff"
                 android:textSize="13sp" />
         </RelativeLayout>

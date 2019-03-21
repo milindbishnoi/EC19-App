@@ -1,7 +1,6 @@
-package com.elementsculmyca.ec19_app.MyTicketsPage;
+package com.elementsculmyca.ec19_app.UI.MyTicketsPage;
 
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class TicketsModel extends AppCompatActivity{
 

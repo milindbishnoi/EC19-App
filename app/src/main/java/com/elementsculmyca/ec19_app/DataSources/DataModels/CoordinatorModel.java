@@ -19,6 +19,8 @@ public class CoordinatorModel {
         this.phone = phone;
     }
 
+    public CoordinatorModel(){}
+
     public String getId() {
         return id;
     }

@@ -44,7 +44,10 @@ public class EventLocalModel {
     @ColumnInfo(name = "hitCount ")
     int hitcount;
 
-    public EventLocalModel(@NonNull String id, String title, String clubname, String category, String desc, String rules, String venue, String photolink, int fee, Long startTime, Long endTime, String coordinator, String prizes, String eventType, String tags, int hitcount) {
+    @ColumnInfo(name = "day")
+    String  day;
+
+    public EventLocalModel(@NonNull String id, String title, String clubname, String category, String desc, String rules, String venue, String photolink, int fee, Long startTime, Long endTime, String coordinator, String prizes, String eventType, String tags, int hitcount,String day) {
         this.id = id;
         this.title = title;
         this.clubname = clubname;
@@ -61,6 +64,7 @@ public class EventLocalModel {
         this.eventType = eventType;
         this.tags = tags;
         this.hitcount = hitcount;
+        this.day=day;
     }
 
     @NonNull
@@ -191,4 +195,8 @@ public class EventLocalModel {
     public void setHitcount(int hitcount) {
         this.hitcount = hitcount;
     }
+
+    public String  getDay() { return day; }
+
+    public void setDay(String day) { this.day = day; }
 }

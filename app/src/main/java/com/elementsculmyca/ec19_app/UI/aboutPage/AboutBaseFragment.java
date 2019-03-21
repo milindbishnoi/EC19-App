@@ -87,42 +87,4 @@ public class AboutBaseFragment extends Fragment {
         }
     }
 
-   // private class WizardPagerAdapter extends PagerAdapter {
-
-     //   public WizardPagerAdapter(FragmentManager childFragmentManager) {
-
-       // }
-
-        //@//Override
-       // public int getCount() {
-       //     return 2;
-        //}
-
-        //public Object instantiateItem(ViewGroup collection, int position) {
-//
-  //          int resId = 0;
-    //        switch (position) {
-      //          case 0:
-        //            return new AboutYmca();
-         //       case 1:
-         //           return new AboutCulmyca();
-         //   }
-        //   return null;
-     //   }
-
-
-
-
-
-   //     @Override
-    //    public boolean isViewFromObject(View arg0, Object arg1) {
-      //      return arg0 == arg1;
-        //}
-
-        //@Override
-        //public void destroyItem(ViewGroup container, int position, Object object) {
-            // No super
-      //  }
-    //}
-
 }

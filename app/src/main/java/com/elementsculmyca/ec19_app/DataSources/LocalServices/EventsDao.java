@@ -13,6 +13,11 @@ public interface EventsDao {
     @Query("SELECT * FROM tb_events")
     List<EventLocalModel> getAll();
 
+    @Query("SELECT * FROM tb_events WHERE clubname LIKE :search ")
+    public List<EventLocalModel> getEventByClubName(String search);
+
+    @Query("SELECT * FROM tb_events WHERE day LIKE :search ")
+    public List<EventLocalModel> getEventByDay(String search);
 
     @Query("SELECT COUNT(*) from tb_events")
     int countUsers();

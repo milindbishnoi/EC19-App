@@ -24,7 +24,7 @@ public class EventDataModel {
     String photolink;
     @SerializedName("fee")
     int fee;
-    // @SerializedName("timing")
+     @SerializedName("timing")
     TimingsModel time;
 
     @SerializedName("coordinators")
@@ -53,6 +53,22 @@ public class EventDataModel {
         this.prizes = prizes;
         this.eventType = eventType;
         this.tags = tags;
+        this.hitcount = hitcount;
+    }
+
+    public EventDataModel(String id, String title, String clubname, String category, String desc, String rules, String venue, String photolink, int fee,TimingsModel time,  PrizeModel prizes,String eventType,  int hitcount) {
+        this.id = id;
+        this.title = title;
+        this.clubname = clubname;
+        this.category = category;
+        this.desc = desc;
+        this.rules = rules;
+        this.venue = venue;
+        this.photolink = photolink;
+        this.fee = fee;
+        this.time=time;
+        this.prizes =prizes;
+        this.eventType = eventType;
         this.hitcount = hitcount;
     }
 

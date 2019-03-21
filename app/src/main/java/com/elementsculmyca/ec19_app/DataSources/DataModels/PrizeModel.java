@@ -12,6 +12,8 @@ public class PrizeModel {
     @SerializedName("prize3")
     String prize3;
 
+    public PrizeModel(){}
+
     public PrizeModel(String prize1, String prize2, String prize3) {
         this.prize1 = prize1;
         this.prize2 = prize2;

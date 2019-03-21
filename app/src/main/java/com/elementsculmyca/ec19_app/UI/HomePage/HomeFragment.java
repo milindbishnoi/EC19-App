@@ -1,6 +1,9 @@
 package com.elementsculmyca.ec19_app.UI.HomePage;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -16,8 +19,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
+import android.widget.Toast;
 
+import com.elementsculmyca.ec19_app.DataSources.DataModels.CoordinatorModel;
 import com.elementsculmyca.ec19_app.DataSources.DataModels.EventDataModel;
+import com.elementsculmyca.ec19_app.DataSources.DataModels.PrizeModel;
+import com.elementsculmyca.ec19_app.DataSources.DataModels.TimingsModel;
+import com.elementsculmyca.ec19_app.DataSources.LocalServices.AppDatabase;
+import com.elementsculmyca.ec19_app.DataSources.LocalServices.DatabaseInitializer;
+import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventLocalModel;
+import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventsDao_Impl;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiClient;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiInterface;
 import com.elementsculmyca.ec19_app.DayAdapter;
@@ -26,6 +37,8 @@ import com.elementsculmyca.ec19_app.UI.ClubEventListPage.EventAdapter;
 import com.elementsculmyca.ec19_app.UI.EventPage.SingleEventActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,11 +48,13 @@ public class HomeFragment extends Fragment {
     private ApiInterface apiInterface;
     SearchView searchView;
     ViewPager viewPager;
-    private ProgressBar bar;
-    private EventAdapter adapter;
+    private EventAdapter eventAdapter;
     private ArrayList<ClubEventModel> allSampleData = new ArrayList<ClubEventModel>();
     private RecyclerView recyclerView;
+    ArrayList<EventDataModel> eventList;
     Button day1,day2,day3;
+    DatabaseInitializer databaseInitializer;
+    ProgressBar bar;
 
 
 
@@ -47,6 +62,20 @@ public class HomeFragment extends Fragment {
     ViewPager.OnPageChangeListener onchange = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int i, float v, int i1) {
+            int x = viewPager.getCurrentItem();
+            if(x==0){
+                day1.setBackgroundTintList(getActivity().getResources().getColorStateList(R.color.day_background_orange));
+                day2.setBackgroundColor(Color.parseColor("#d8d8d8"));
+                day3.setBackgroundTintList(getActivity().getResources().getColorStateList(R.color.day_background_grey));
+            }else if(x==1){
+                day1.setBackgroundTintList(getActivity().getResources().getColorStateList(R.color.day_background_grey));
+                day2.setBackgroundColor(Color.parseColor("#f5a623"));
+                day3.setBackgroundTintList(getActivity().getResources().getColorStateList(R.color.day_background_grey));
+            }else{
+                day1.setBackgroundTintList(getActivity().getResources().getColorStateList(R.color.day_background_grey));
+                day2.setBackgroundColor(Color.parseColor("#d8d8d8"));
+                day3.setBackgroundTintList(getActivity().getResources().getColorStateList(R.color.day_background_orange));
+            }
 
         }
 
@@ -65,23 +94,26 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View root = inflater.inflate( R.layout.fragment_main_screen, container, false );
         viewPager= root.findViewById(R.id.days_viewpager);
         searchView=  root.findViewById(R.id.search_view);
         searchView.setQueryHint("Search for Events");
         apiInterface = ApiClient.getClient().create( ApiInterface.class );
-       // recyclerView=root.findViewById(R.id.schedule_recyclerView);
-       // bar = (ProgressBar)root.findViewById(R.id.pb);
-        //bar.setVisibility(View.VISIBLE);
-      //  getAllEvents();
+        getAllEvents();
         day1=root.findViewById(R.id.btn_day1);
         day2=root.findViewById(R.id.btn_day2);
         day3=root.findViewById(R.id.btn_day3);
-        DayAdapter adapterday= new DayAdapter(getChildFragmentManager());
-        viewPager.setAdapter(adapterday);
+        bar=root.findViewById(R.id.pb);
         viewPager.addOnPageChangeListener(onchange);
+        if(isNetworkAvailable()) {
+            bar.setVisibility(View.VISIBLE);
+            getAllEvents();
+        }
 
+        else{
+            DayAdapter adapterday= new DayAdapter(getChildFragmentManager());
+            viewPager.setAdapter(adapterday);
+        }
 
         day1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,26 +122,18 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
         day2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 viewPager.setCurrentItem(1,true);
             }
         });
-
         day3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 viewPager.setCurrentItem(2,true);
             }
         });
-      //  day1.setOnClickListener(new View.OnClickListener() {
-            //@Override
-       //     public void onClick(View view) {
-       //         startActivity(new Intent(getActivity(),SingleEventActivity.class));
-            //}
-       // });
         addData();
         EventCategoryAdapter adapter = new EventCategoryAdapter(getActivity(), allSampleData);
 
@@ -131,22 +155,27 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<ArrayList<EventDataModel>> call, Response<ArrayList<EventDataModel>> response) {
                 //TODO YAHAN PE LIST AAEGI API SE UI ME LAGA LENA
                 ArrayList<EventDataModel> eventList= response.body();
-                adapter = new EventAdapter(eventList);
-                recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
-                recyclerView.setAdapter(adapter);
+                databaseInitializer.populateSync(AppDatabase.getAppDatabase(getActivity()),eventList);
                 bar.setVisibility(View.GONE);
-                Log.e( "Response", response.body().size() + "" );
-
+                DayAdapter adapterday= new DayAdapter(getChildFragmentManager());
+                viewPager.setAdapter(adapterday);
             }
 
             @Override
             public void onFailure(Call<ArrayList<EventDataModel>> call, Throwable t) {
+                bar.setVisibility(View.GONE);
                 Log.e( "Response", call.request().url() + "" + call.request().body() );
 
             }
 
         } );
 
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
     private void addData() {
 

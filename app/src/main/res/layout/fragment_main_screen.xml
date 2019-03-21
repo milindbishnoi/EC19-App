@@ -78,7 +78,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:background="#f5a623"
+            android:background="#d8d8d8"
             android:fontFamily="@font/overpass_black"
             android:text="Day2" />
 
@@ -95,14 +95,22 @@
             android:text="Day3" />
     </LinearLayout>
 
-
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp">
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/pb"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
     <android.support.v4.view.ViewPager
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/days_viewpager"
-    >
-
-
-     </android.support.v4.view.ViewPager>
+    />
+</RelativeLayout>
 
 </LinearLayout>

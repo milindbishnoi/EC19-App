@@ -6,6 +6,8 @@ import android.util.Log;
 
 import com.elementsculmyca.ec19_app.DataSources.DataModels.EventDataModel;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class DatabaseInitializer {
@@ -30,7 +32,18 @@ public class DatabaseInitializer {
 
         db.eventsDao().deleteAll();
         for (int i = 0; i < data.size(); i++) {
-
+            String day;
+            Long time = data.get(i).getTime().getFrom();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            String dateString= formatter.format(new Date(time));
+            if(dateString.equals("11/04/2019"))
+                day="1";
+            else if(dateString.equals("12/04/2019"))
+                day="2";
+            else  if(dateString.equals("13/04/2019"))
+                day="3";
+            else
+                day="4";
             EventLocalModel mdData = new EventLocalModel( data.get( i ).getId(),
                     data.get( i ).getTitle() + "",
                     data.get( i ).getClubname() + "",
@@ -40,13 +53,14 @@ public class DatabaseInitializer {
                     data.get( i ).getVenue() + "",
                     data.get( i ).getPhotolink() + "",
                     data.get( i ).getFee(),
-                    (long) 1,
-                    (long) 0,
+                    data.get(i).getTime().getFrom(),
+                    data.get(i).getTime().getTo(),
                     "",
-                    data.get( i ).getPrizes().getPrize1() + "%" + data.get( i ).getPrizes().getPrize1(),
+                    data.get( i ).getPrizes().getPrize1() + "%" + data.get( i ).getPrizes().getPrize2()+"%"+data.get(i).getPrizes().getPrize3(),
                     data.get( i ).getEventType() + "",
                     "",
-                    data.get( i ).getHitcount() );
+                    data.get( i ).getHitcount(),
+                    day);
 
             addUser( db, mdData );
         }

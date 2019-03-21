@@ -74,10 +74,6 @@ public class SignUpActivity extends AppCompatActivity implements FragmentOtpChec
                     sharedPreferences=getSharedPreferences("login_details",0);
                     musername = userName.getText().toString();
                     muserclg= userCollege.getText().toString();
-                    SharedPreferences.Editor editor= sharedPreferences.edit();
-                    editor.putString("Username",musername);
-                    editor.putString("UserClg",muserclg);
-                    editor.commit();
                 }
             }
         });
@@ -153,6 +149,10 @@ public class SignUpActivity extends AppCompatActivity implements FragmentOtpChec
     @Override
     public void updateResult(boolean status) {
         if (status) {
+            SharedPreferences.Editor editor= sharedPreferences.edit();
+            editor.putString("Username",musername);
+            editor.putString("UserClg",muserclg);
+            editor.commit();
             startActivity(new Intent(SignUpActivity.this,MainScreenActivity.class));
             finish();
         } else {

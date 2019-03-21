@@ -31,9 +31,6 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
     public void onBindViewHolder(EventViewHolder holder, int position) {
 
         EventListModel el = eventlist.get(position);
-
-
-
     }
 
     @Override
