@@ -36,7 +36,19 @@
         <activity android:name=".UI.MainScreen.MainScreenActivity" />
         <activity
             android:name=".UI.EventPage.SingleEventActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="elementsculmyca.com"
+                    android:pathPattern="/events/" />
+            </intent-filter>
+        </activity>
         <activity android:name=".UI.ClubEventListPage.ClubEventListActivity">
 
         </activity>

@@ -169,6 +169,7 @@
                     android:layout_alignParentRight="true"
                     >
                     <ImageView
+                        android:id="@+id/share_event"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_gravity="center"
