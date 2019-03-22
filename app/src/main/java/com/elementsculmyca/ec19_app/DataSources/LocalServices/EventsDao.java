@@ -19,8 +19,8 @@ public interface EventsDao {
     @Query("SELECT * FROM tb_events WHERE day LIKE :search ")
     public List<EventLocalModel> getEventByDay(String search);
 
-    @Query("SELECT id FROM tb_events WHERE title LIKE :search ")
-    public String getEventByEventName(String search);
+    @Query("SELECT * FROM tb_events WHERE title LIKE :search ")
+    public EventLocalModel getEventByEventName(String search);
 
     @Query("SELECT * FROM tb_events WHERE id LIKE :search ")
     public EventLocalModel getEventByEventId(String search);

@@ -40,22 +40,23 @@ public class SingleEventActivity extends AppCompatActivity {
         Uri appLinkData = appLinkIntent.getData();
         if (Intent.ACTION_VIEW.equals(appLinkAction) && appLinkData != null) {
             String revStr = new StringBuilder(appLinkData.toString()).reverse().toString();
-            Toast.makeText(this, revStr, Toast.LENGTH_SHORT).show();
             int i;
             for (i = 0; revStr.charAt(i) != 35; i++) {
             }
             revStr = revStr.substring(0, i);
-            Toast.makeText(this, revStr, Toast.LENGTH_SHORT).show();
-            String eventName = new StringBuilder(revStr).reverse().toString().toUpperCase();
+            String eventName = new StringBuilder(revStr).reverse().toString();
             eventName = eventName.replace("%20", " ");
-            eventId = dao.getEventByEventName(eventName);
+            eventData =new EventLocalModel();
+            eventData = dao.getEventByEventName(eventName);
+        }else {
             eventId = getIntent().getStringExtra("eventId");
+            Toast.makeText(this, eventId, Toast.LENGTH_SHORT).show();
+            eventData =new EventLocalModel();
+            eventData = dao.getEventByEventId(eventId);
+            // add data to page
         }
-        eventId = getIntent().getStringExtra("eventId");
-        eventData =new EventLocalModel();
-        eventData = dao.getEventByEventId(eventId);
-        // add data to page
         eventName.setText(eventData.getTitle());
+
 
 
         FragmentManager manager = getSupportFragmentManager();
@@ -78,10 +79,9 @@ public class SingleEventActivity extends AppCompatActivity {
        sharebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String baseURL = "http://elementsculmyca.com/events/";
-                String parsedURl = baseURL + "#" + "Insurrection";
-//                String parsedURl = baseURL + "$" + eventData.getTitle().toString().replaceAll(" ", "%20");
-                String message = "Elements Culmyca 2K19: " + "Code Relay " + "View event by clicking the link: " + parsedURl;
+                String baseUrl = "http://elementsculmyca.com/events/";
+                String parsedUrl = baseUrl + "#" + eventData.getTitle().toString().replaceAll(" ", "%20");
+                String message = "Elements Culmyca 2K19: " + "Code Relay " + "View event by clicking the link: " + parsedUrl;
 
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
