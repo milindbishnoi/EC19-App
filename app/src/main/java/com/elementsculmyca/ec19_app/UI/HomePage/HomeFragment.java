@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.SearchView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.elementsculmyca.ec19_app.DataSources.DataModels.EventDataModel;
@@ -25,7 +25,6 @@ import com.elementsculmyca.ec19_app.DataSources.LocalServices.DatabaseInitialize
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiClient;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiInterface;
 import com.elementsculmyca.ec19_app.R;
-import com.elementsculmyca.ec19_app.Searchable;
 import com.elementsculmyca.ec19_app.UI.ClubEventListPage.EventAdapter;
 
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
     private ApiInterface apiInterface;
-    TextView searchView;
+    RelativeLayout searchView;
     ViewPager viewPager;
     private EventAdapter eventAdapter;
     private ArrayList<ClubEventModel> allSampleData = new ArrayList<ClubEventModel>();

@@ -11,18 +11,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
+        android:layout_marginRight="15dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="#d8d8d8"
+        android:clickable="true"
+        android:id="@+id/search_view">
 
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search_black_24dp"
+            android:paddingLeft="11dp"
+            android:paddingTop="11dp"
+            android:paddingRight="11dp"
+            android:tint="#4a4a4a"
+            android:layout_centerVertical="true"
+            android:paddingBottom="11dp"
+            android:id="@+id/search_image"/>
         <TextView
-            android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
-            android:backgroundTint="#d8d8d8"
-            android:clickable="true"
             android:fontFamily="@font/overpass_black"
-            android:padding="11dp"
+            android:paddingTop="11dp"
+            android:paddingRight="11dp"
+            android:paddingBottom="11dp"
+            android:paddingLeft="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/search_image"
             android:textSize="18sp"
             android:textColor="#4a4a4a"
             android:text="Search for Events"/>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="25dp"
+    android:layout_marginTop="10dp"
     android:orientation="vertical"
     tools:context=".UI.HomePage.HomeFragment">
 
@@ -19,11 +19,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
             android:backgroundTint="#d8d8d8"
-            android:clickable="true" />
-
-
-
-
+            android:clickable="true"
+            android:iconifiedByDefault="false"/>
 
     </RelativeLayout>
 

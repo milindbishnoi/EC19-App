@@ -64,7 +64,7 @@
         <activity
             android:name=".UI.SignUpPage.SignUpActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-        <activity android:name=".Searchable"></activity>
+        <activity android:name=".UI.HomePage.Searchable"></activity>
     </application>
 
 </manifest>

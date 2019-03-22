@@ -9,8 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.elementsculmyca.ec19_app.DataSources.DataModels.EventDataModel;
 import com.elementsculmyca.ec19_app.DataSources.LocalServices.AppDatabase;
 import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventLocalModel;
@@ -50,7 +48,6 @@ public class SingleEventActivity extends AppCompatActivity {
             eventData = dao.getEventByEventName(eventName);
         }else {
             eventId = getIntent().getStringExtra("eventId");
-            Toast.makeText(this, eventId, Toast.LENGTH_SHORT).show();
             eventData =new EventLocalModel();
             eventData = dao.getEventByEventId(eventId);
         }
