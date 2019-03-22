@@ -13,13 +13,19 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
 
-        <SearchView
+
+        <TextView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
             android:backgroundTint="#d8d8d8"
-            android:clickable="true" />
+            android:clickable="true"
+            android:fontFamily="@font/overpass_black"
+            android:padding="11dp"
+            android:textSize="18sp"
+            android:textColor="#4a4a4a"
+            android:text="Search for Events"/>
 
     </RelativeLayout>
 

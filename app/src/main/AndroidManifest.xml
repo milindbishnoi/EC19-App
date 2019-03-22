@@ -32,7 +32,7 @@
         </activity>
         <activity
             android:name=".UI.LoginScreen.LoginActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity android:name=".UI.MainScreen.MainScreenActivity" />
         <activity
             android:name=".UI.EventPage.SingleEventActivity"
@@ -44,9 +44,9 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="http"
                     android:host="elementsculmyca.com"
-                    android:pathPattern="/events/" />
+                    android:pathPattern="/events/"
+                    android:scheme="http" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -55,17 +55,16 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="http"
                     android:host="elementsculmyca.com"
-                    android:pathPrefix="/events" />
+                    android:pathPrefix="/events"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.ClubEventListPage.ClubEventListActivity">
-
-        </activity>
+        <activity android:name=".UI.ClubEventListPage.ClubEventListActivity"></activity>
         <activity
             android:name=".UI.SignUpPage.SignUpActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity android:name=".Searchable"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.elementsculmyca.ec19_app.UI.HomePage;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.graphics.Color;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.elementsculmyca.ec19_app.DataSources.DataModels.EventDataModel;
 import com.elementsculmyca.ec19_app.DataSources.LocalServices.AppDatabase;
@@ -23,6 +25,7 @@ import com.elementsculmyca.ec19_app.DataSources.LocalServices.DatabaseInitialize
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiClient;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiInterface;
 import com.elementsculmyca.ec19_app.R;
+import com.elementsculmyca.ec19_app.Searchable;
 import com.elementsculmyca.ec19_app.UI.ClubEventListPage.EventAdapter;
 
 import java.util.ArrayList;
@@ -33,7 +36,7 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
     private ApiInterface apiInterface;
-    SearchView searchView;
+    TextView searchView;
     ViewPager viewPager;
     private EventAdapter eventAdapter;
     private ArrayList<ClubEventModel> allSampleData = new ArrayList<ClubEventModel>();
@@ -84,7 +87,17 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate( R.layout.fragment_main_screen, container, false );
         viewPager= root.findViewById(R.id.days_viewpager);
         searchView=  root.findViewById(R.id.search_view);
-        searchView.setQueryHint("Search for Events");
+        //searchView.setQueryHint("Search for Events");
+
+
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(),Searchable.class);
+                startActivity(intent);
+            }
+        });
+
         apiInterface = ApiClient.getClient().create( ApiInterface.class );
         getAllEvents();
         day1=root.findViewById(R.id.btn_day1);
