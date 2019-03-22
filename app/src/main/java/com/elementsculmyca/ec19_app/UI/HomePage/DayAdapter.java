@@ -1,8 +1,12 @@
-package com.elementsculmyca.ec19_app;
+package com.elementsculmyca.ec19_app.UI.HomePage;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import com.elementsculmyca.ec19_app.UI.HomePage.Day1Fragment;
+import com.elementsculmyca.ec19_app.UI.HomePage.Day2Fragment;
+import com.elementsculmyca.ec19_app.UI.HomePage.Day3Fragment;
 
 
 public class DayAdapter extends FragmentStatePagerAdapter {

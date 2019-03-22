@@ -5,26 +5,34 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.elementsculmyca.ec19_app.DataSources.DataModels.EventDataModel;
+import com.elementsculmyca.ec19_app.DataSources.LocalServices.AppDatabase;
+import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventLocalModel;
+import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventsDao_Impl;
 import com.elementsculmyca.ec19_app.R;
 import com.elementsculmyca.ec19_app.UI.SplashScreen.SplashScreenActivity;
 
 public class SingleEventActivity extends AppCompatActivity {
-    TextView registerButton;
+    TextView registerButton,eventName;
     ImageView sharebutton;
-    private EventDataModel eventData;
+    EventsDao_Impl dao;
+    private String eventId;
+    EventLocalModel eventData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_event);
+        eventName=findViewById(R.id.event_title);
         registerButton = findViewById(R.id.register);
         sharebutton = findViewById(R.id.share_event);
+        dao=new EventsDao_Impl(AppDatabase.getAppDatabase(SingleEventActivity.this));
 
         // ATTENTION: This was auto-generated to handle app links.
         Intent appLinkIntent = getIntent();
@@ -32,16 +40,23 @@ public class SingleEventActivity extends AppCompatActivity {
         Uri appLinkData = appLinkIntent.getData();
         if (Intent.ACTION_VIEW.equals(appLinkAction) && appLinkData != null) {
             String revStr = new StringBuilder(appLinkData.toString()).reverse().toString();
+            Toast.makeText(this, revStr, Toast.LENGTH_SHORT).show();
             int i;
-            for (i = 0; revStr.charAt(i) != 36; i++) {
+            for (i = 0; revStr.charAt(i) != 35; i++) {
             }
             revStr = revStr.substring(0, i);
+            Toast.makeText(this, revStr, Toast.LENGTH_SHORT).show();
             String eventName = new StringBuilder(revStr).reverse().toString().toUpperCase();
-            eventName = eventName.replace("1#9", " ");
-            // retrieve event id...to check if event exist
-        } else {
-
+            eventName = eventName.replace("%20", " ");
+            eventId = dao.getEventByEventName(eventName);
+            eventId = getIntent().getStringExtra("eventId");
         }
+        eventId = getIntent().getStringExtra("eventId");
+        eventData =new EventLocalModel();
+        eventData = dao.getEventByEventId(eventId);
+        // add data to page
+        eventName.setText(eventData.getTitle());
+
 
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.frame, new DescriptionEventFragment()).commit();
@@ -64,8 +79,9 @@ public class SingleEventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String baseURL = "http://elementsculmyca.com/events/";
-                String parsedURl = baseURL + "$" + eventData.getTitle().toString().replaceAll(" ", "1#9");
-                String message = "Elements Culmyca 2K19: " + eventData.getTitle().toString() + "View event by clicking the link: " + parsedURl;
+                String parsedURl = baseURL + "#" + "Insurrection";
+//                String parsedURl = baseURL + "$" + eventData.getTitle().toString().replaceAll(" ", "%20");
+                String message = "Elements Culmyca 2K19: " + "Code Relay " + "View event by clicking the link: " + parsedURl;
 
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");

@@ -47,6 +47,8 @@ public class EventLocalModel {
     @ColumnInfo(name = "day")
     String  day;
 
+    public EventLocalModel(){}
+
     public EventLocalModel(@NonNull String id, String title, String clubname, String category, String desc, String rules, String venue, String photolink, int fee, Long startTime, Long endTime, String coordinator, String prizes, String eventType, String tags, int hitcount,String day) {
         this.id = id;
         this.title = title;

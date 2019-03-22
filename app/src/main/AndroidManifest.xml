@@ -48,6 +48,17 @@
                     android:host="elementsculmyca.com"
                     android:pathPattern="/events/" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="elementsculmyca.com"
+                    android:pathPrefix="/events" />
+            </intent-filter>
         </activity>
         <activity android:name=".UI.ClubEventListPage.ClubEventListActivity">
 

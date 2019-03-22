@@ -1,4 +1,4 @@
-package com.elementsculmyca.ec19_app;
+package com.elementsculmyca.ec19_app.UI.HomePage;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -22,6 +22,7 @@ import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventLocalModel;
 import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventsDao_Impl;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiClient;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiInterface;
+import com.elementsculmyca.ec19_app.R;
 import com.elementsculmyca.ec19_app.UI.ClubEventListPage.EventAdapter;
 
 import java.util.ArrayList;

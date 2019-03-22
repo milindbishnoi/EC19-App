@@ -1,13 +1,10 @@
 package com.elementsculmyca.ec19_app.UI.HomePage;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,26 +16,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
-import android.widget.Toast;
 
-import com.elementsculmyca.ec19_app.DataSources.DataModels.CoordinatorModel;
 import com.elementsculmyca.ec19_app.DataSources.DataModels.EventDataModel;
-import com.elementsculmyca.ec19_app.DataSources.DataModels.PrizeModel;
-import com.elementsculmyca.ec19_app.DataSources.DataModels.TimingsModel;
 import com.elementsculmyca.ec19_app.DataSources.LocalServices.AppDatabase;
 import com.elementsculmyca.ec19_app.DataSources.LocalServices.DatabaseInitializer;
-import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventLocalModel;
-import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventsDao_Impl;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiClient;
 import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiInterface;
-import com.elementsculmyca.ec19_app.DayAdapter;
 import com.elementsculmyca.ec19_app.R;
 import com.elementsculmyca.ec19_app.UI.ClubEventListPage.EventAdapter;
-import com.elementsculmyca.ec19_app.UI.EventPage.SingleEventActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

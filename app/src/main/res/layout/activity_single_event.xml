@@ -40,6 +40,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#ffffff"
                     android:textSize="30sp"
+                    android:id="@+id/event_title"
                     android:fontFamily="@font/overpass_black"
                     android:text="Stage Play" />
                 <LinearLayout
