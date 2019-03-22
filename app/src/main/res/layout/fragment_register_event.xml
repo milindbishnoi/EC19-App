@@ -24,6 +24,10 @@
             android:textColor="#4a4a4a"
             android:textSize="20sp"
             android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="team"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,6 +116,11 @@
                 android:textColorHint="#9b9b9b"
                 android:textSize="15dp"
                 />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter email"
+                android:id="@+id/useremail"/>
         </LinearLayout>
 
         <RelativeLayout
@@ -165,7 +174,7 @@
             android:layout_marginRight="5dp"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
@@ -179,9 +188,10 @@
                 android:paddingBottom="10dp"
                 android:text="Register Now"
                 android:textColor="#ffffff"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:id="@+id/registerNow"/>
 
-            <TextView
+            <Button
                 android:id="@+id/save"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

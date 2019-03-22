@@ -23,6 +23,7 @@ public class SingleEventActivity extends AppCompatActivity {
     ImageView sharebutton;
     EventsDao_Impl dao;
     private String eventId;
+    private String eventname;
     EventLocalModel eventData;
 
     @Override
@@ -56,7 +57,14 @@ public class SingleEventActivity extends AppCompatActivity {
         }
         //add data to page
         eventName.setText(eventData.getTitle());
-
+        Toast.makeText(this, eventId, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, eventData.getTitle(), Toast.LENGTH_SHORT).show();
+       Bundle bundle= new Bundle();
+       bundle.putString("eventid",eventId);
+        bundle.putString("eventname",eventData.getTitle());
+        bundle.putString("team"," ");
+        final RegisterEventFragment frag = new RegisterEventFragment();
+        frag.setArguments(bundle);
 
 
         FragmentManager manager = getSupportFragmentManager();
@@ -67,7 +75,7 @@ public class SingleEventActivity extends AppCompatActivity {
                 if (registerButton.getText().equals("Register Now!")) {
                     registerButton.setText("View Details");
                     FragmentManager manager = getSupportFragmentManager();
-                    manager.beginTransaction().replace(R.id.frame, new RegisterEventFragment()).commit();
+                    manager.beginTransaction().replace(R.id.frame, frag).commit();
                 } else {
                     registerButton.setText("Register Now!");
                     FragmentManager manager = getSupportFragmentManager();

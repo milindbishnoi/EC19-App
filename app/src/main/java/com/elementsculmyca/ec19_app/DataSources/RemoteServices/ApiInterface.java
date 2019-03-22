@@ -40,6 +40,7 @@ public interface ApiInterface {
     @GET("updateTrending")
     Call<ResponseModel> updateTrending(@Query("id") String eventId);
 
+    @FormUrlEncoded
     @POST("register")
     Call<ResponseModel> postregisterEvent(@Field("name") String name,
                                           @Field("phone") String phone,
