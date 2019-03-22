@@ -54,7 +54,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
         viewHolder.eventVenue.setText(event.getVenue().substring(0, Math.min(event.getVenue().length(), 15)));
         if (event.getVenue().length() > 15)
             viewHolder.eventVenue.append("...");
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("h:mm a");
         String timeString= formatter.format(new Date(event.getTime().getFrom()));
         viewHolder.eventTime.setText(timeString);
         viewHolder.registerButton.setOnClickListener(new View.OnClickListener() {
