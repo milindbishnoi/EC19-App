@@ -5,15 +5,15 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:fitsSystemWindows="true"
-    android:layout_marginTop="10dp"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
     tools:context=".UI.ClubEventListPage.ClubEventListActivity">
 
     <RelativeLayout
         android:id="@+id/rl_top"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <ImageView
             android:id="@+id/iv_back_button"
@@ -60,7 +60,9 @@
         android:id="@+id/rl_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rl_top">
+        android:layout_below="@+id/rl_top"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <LinearLayout
             android:id="@+id/ll_event_category_photo_name"
@@ -110,7 +112,8 @@
         android:layout_below="@+id/rl_1"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:background="#000" />
+        android:background="#000"
+        />
 
     <RelativeLayout
         android:id="@+id/ll_single_event_card"
@@ -118,8 +121,6 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/view_3"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
         android:orientation="vertical">
         <ProgressBar

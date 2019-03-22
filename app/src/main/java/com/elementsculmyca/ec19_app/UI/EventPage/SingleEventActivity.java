@@ -53,8 +53,8 @@ public class SingleEventActivity extends AppCompatActivity {
             Toast.makeText(this, eventId, Toast.LENGTH_SHORT).show();
             eventData =new EventLocalModel();
             eventData = dao.getEventByEventId(eventId);
-            // add data to page
         }
+        //add data to page
         eventName.setText(eventData.getTitle());
 
 

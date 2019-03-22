@@ -84,6 +84,34 @@
             android:textColorHint="#9b9b9b"
             android:textSize="15dp"
             />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/overpass_black"
+                android:text="Phone Number"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/buttonshape"
+                android:fontFamily="@font/overpass_black"
+                android:hint="Enter Phone Number"
+                android:inputType="phone"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColorHint="#9b9b9b"
+                android:textSize="15dp"
+                />
         </LinearLayout>
 
         <RelativeLayout

@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="15dp"
     android:layout_marginTop="25dp"
-    android:layout_marginRight="15dp"
     android:orientation="vertical"
     tools:context=".UI.HomePage.HomeFragment">
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
 
         <SearchView
             android:id="@+id/search_view"
@@ -31,6 +31,8 @@
         android:layout_marginBottom="5dp"
         android:textColor="#4a4a4a"
         android:textSize="18sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:text="Categories"
 
         />
@@ -39,6 +41,8 @@
         android:id="@+id/categories_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="140dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:orientation="horizontal">
 
     </android.support.v7.widget.RecyclerView>
@@ -49,12 +53,15 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/overpass_black"
         android:text="Schedule"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:textColor="#4a4a4a"
         android:textSize="18sp" />
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
         >
 
 
@@ -62,34 +69,45 @@
             android:id="@+id/btn_day1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
             android:background="@drawable/buttonshapeday1"
             android:fontFamily="@font/overpass_black"
             android:text="Day1"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_1"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="#d8d8d8"
             />
 
         <Button
             android:id="@+id/btn_day2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
             android:background="#d8d8d8"
             android:fontFamily="@font/overpass_black"
             android:text="Day2" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_1"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="#d8d8d8"
+            />
 
         <Button
             android:id="@+id/btn_day3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
             android:background="@drawable/buttonshapeday2"
             android:fontFamily="@font/overpass_black"
             android:text="Day3" />

@@ -29,7 +29,7 @@ public class RegisterEventFragment extends Fragment {
 
     private ApiInterface apiInterface;
     EditText userName;
-    EditText userClg,name,college;
+    EditText userClg,name,college,userPhone;
     ArrayList<TextView> memberno;
     ArrayList<EditText> nameText, collegeText;
     Button addButton;
@@ -42,6 +42,7 @@ public class RegisterEventFragment extends Fragment {
         View view = inflater.inflate( R.layout.fragment_register_event, container, false );
         apiInterface = ApiClient.getClient().create( ApiInterface.class );
         userName=(EditText) view.findViewById(R.id.user_name);
+        userPhone = view.findViewById(R.id.phone_number);
         userClg=(EditText) view.findViewById(R.id.clg);
         memberno = new ArrayList<>();
         nameText = new ArrayList<>();
@@ -53,6 +54,8 @@ public class RegisterEventFragment extends Fragment {
         sharedPreferences= this.getActivity().getSharedPreferences("login_details",0);
         userName.setText(sharedPreferences.getString("Username",""));
         userClg.setText(sharedPreferences.getString("UserClg",""));
+        userPhone.setText(sharedPreferences.getString("UserPhone",""));
+
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
