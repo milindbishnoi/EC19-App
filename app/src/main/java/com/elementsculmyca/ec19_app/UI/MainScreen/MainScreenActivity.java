@@ -1,5 +1,6 @@
 package com.elementsculmyca.ec19_app.UI.MainScreen;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -29,9 +30,10 @@ public class MainScreenActivity extends AppCompatActivity {
                     switchToFragmentAbout();
                     break;
                 case R.id.navigation_logout:
-                    SharedPreferences preferences = getSharedPreferences("login_details", 0);
-                    preferences.edit().remove("Username").commit();
-                    preferences.edit().remove("UserClg").commit();
+                    SharedPreferences preferences =getSharedPreferences("login_details",Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.clear();
+                    editor.commit();
                     startActivity(new Intent(MainScreenActivity.this,LoginActivity.class));
                     finish();
                     break;

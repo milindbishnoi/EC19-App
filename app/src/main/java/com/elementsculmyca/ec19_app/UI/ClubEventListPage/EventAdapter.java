@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.elementsculmyca.ec19_app.DataSources.DataModels.EventDataModel;
@@ -16,15 +18,19 @@ import com.elementsculmyca.ec19_app.UI.EventPage.SingleEventActivity;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
+public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> implements Filterable {
     private ArrayList<EventDataModel> eventList;
     private Context context;
+
+    private ArrayList<EventDataModel> eventListcopy;
 
     public EventAdapter(ArrayList<EventDataModel> events,Context context)
     {
         this.eventList = events;
         this.context = context;
+        eventListcopy=new ArrayList<EventDataModel>(eventList);
     }
     public EventAdapter()
     {
@@ -70,6 +76,49 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     public int getItemCount() {
         return eventList.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return exampleFilter;
+
+    }
+
+    private Filter exampleFilter=new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            List<EventDataModel> filteredList=new ArrayList<>();
+            if(charSequence==null ||charSequence.length()==0 )
+            {
+                filteredList.addAll(eventListcopy);
+            }
+            else
+            {
+                String filterpattern=charSequence.toString().toLowerCase().trim();
+                for (EventDataModel item:eventListcopy)
+                {
+                    if(item.getTitle().toLowerCase().contains(filterpattern))
+                    {
+                        filteredList.add(item);
+                    }
+                }
+            }
+            FilterResults results=new FilterResults();
+            results.values=filteredList;
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            eventList.clear();
+            eventList.addAll((List)filterResults.values);
+            notifyDataSetChanged();
+
+
+        }
+    };
+
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView eventName, eventDescription, eventTime,eventVenue,eventType,registerButton;
