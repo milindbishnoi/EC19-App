@@ -33,10 +33,10 @@ import static com.elementsculmyca.ec19_app.UI.LoginScreen.FragmentOtpChecker.REQ
 public class SignUpActivity extends AppCompatActivity implements FragmentOtpChecker.otpCheckStatus  {
     TextView login,guest;
     ImageView submit;
-    EditText userName,userCollege,userPhone;
+    EditText userName,userCollege,userPhone,userEmail;
     private ProgressDialog mProgress;
     private String musername;
-    private String muserclg,mUserPhone;
+    private String muserclg,mUserPhone,mUserEmail;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class SignUpActivity extends AppCompatActivity implements FragmentOtpChec
         userName=findViewById(R.id.name);
         userCollege=findViewById(R.id.college);
         userPhone=findViewById(R.id.phone_number);
+        userEmail = findViewById(R.id.email);
         mProgress = new ProgressDialog(this);
         mProgress.setMessage("Registering You");
         mProgress.setTitle("Please Wait");
@@ -75,6 +76,7 @@ public class SignUpActivity extends AppCompatActivity implements FragmentOtpChec
                     musername = userName.getText().toString();
                     muserclg= userCollege.getText().toString();
                     mUserPhone = userPhone.getText().toString();
+                    mUserEmail = userEmail.getText().toString();
                 }
             }
         });
@@ -144,6 +146,16 @@ public class SignUpActivity extends AppCompatActivity implements FragmentOtpChec
             userCollege.setError("Enter a College Name");
             return false;
         }
+
+        if(userEmail.getText().toString().equals("")){
+            userEmail.setError("Enter a email address");
+            return false;
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(userEmail.getText().toString()).matches()){
+            userEmail.setError("Enter a valid email address");
+            return false;
+        }
         return true;
     }
 
@@ -154,6 +166,7 @@ public class SignUpActivity extends AppCompatActivity implements FragmentOtpChec
             editor.putString("Username",musername);
             editor.putString("UserClg",muserclg);
             editor.putString("UserPhone",mUserPhone);
+            editor.putString("UserEmail",mUserEmail);
             editor.commit();
             startActivity(new Intent(SignUpActivity.this,MainScreenActivity.class));
             finish();

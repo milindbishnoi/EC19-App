@@ -122,19 +122,33 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/overpass_black"
-                        android:text="29 March 2019,"
+                        android:text="29 March 2019"
                         android:textColor="#ffffff"
                         android:textSize="24sp" />
 
-                    <TextView
-                        android:id="@+id/event_day"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="13dp"
-                        android:fontFamily="@font/overpass_black"
-                        android:textColor="#ffffff"
-                        android:textSize="24sp"
-                        tools:text="Day 2" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/overpass_black"
+                            android:textColor="#ffffff"
+                            android:textSize="24sp"
+                            android:id="@+id/tv_day"
+                            tools:text=", Day " />
+
+                        <TextView
+                            android:id="@+id/event_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/overpass_black"
+                            android:textColor="#ffffff"
+                            android:textSize="24sp"
+                            tools:text="2" />
+                    </LinearLayout>
 
                 </LinearLayout>
                 <LinearLayout

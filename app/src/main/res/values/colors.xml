@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorFacebook_Login_blue">#2f4a90e2</color>
     <color name="colorGoogle_Login_Pink">#f8cfd4</color>
+    <color name="Black">#000</color>
 </resources>

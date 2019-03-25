@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.elementsculmyca.ec19_app.R;
+import com.elementsculmyca.ec19_app.UI.BookmarksPage.BookmarksFragment;
+import com.elementsculmyca.ec19_app.UI.DeveloperPage.DeveloperFragment;
 import com.elementsculmyca.ec19_app.UI.HomePage.HomeFragment;
 import com.elementsculmyca.ec19_app.UI.LoginScreen.LoginActivity;
 import com.elementsculmyca.ec19_app.UI.aboutPage.AboutBaseFragment;
@@ -59,9 +61,12 @@ public class MainScreenActivity extends AppCompatActivity {
 
     private void switchToFragmentAbout() {
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.frame, new AboutBaseFragment()).commit();
+        manager.beginTransaction().replace(R.id.frame, new BookmarksFragment()).commit();
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
+    }
 }

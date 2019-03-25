@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8D8D8">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ec_logo_2019"
+        android:tint="#4a4a4a"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/logo"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="OUR TEAM"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="18dp"
+        android:textColor="#000"
+        android:fontFamily="@font/overpass_black"
+        android:textSize="20sp"
+        android:id="@+id/tv_team"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_team"
+        android:layout_marginTop="15dp"
+        android:id="@+id/recycler_view"
+        android:layout_centerHorizontal="true">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</RelativeLayout>

@@ -56,7 +56,8 @@ public class ClubEventListActivity extends AppCompatActivity {
         clubDisplayName=findViewById(R.id.tv_category_name_heading);
         if(displayName.equals("Lit-Deb")){
             clubDisplayName.setText("Literary");
-        }
+        }else if(displayName.equals("Photography & Designing"))
+            clubDisplayName.setText("Photography");
         else {
             clubDisplayName.setText(displayName);
         }

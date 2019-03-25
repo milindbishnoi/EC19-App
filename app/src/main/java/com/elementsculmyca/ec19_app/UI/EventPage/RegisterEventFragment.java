@@ -25,6 +25,8 @@ import com.elementsculmyca.ec19_app.DataSources.RemoteServices.ApiInterface;
 import com.elementsculmyca.ec19_app.R;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,21 +42,17 @@ public class RegisterEventFragment extends Fragment {
     private ApiInterface apiInterface;
     EditText userName,userEmail;
     EditText userClg,name,college,userPhone;
-    TextView team;
     String intentTeam;
     String intentEmail;
     String intentPhone;
     String intentClg;
-
+    String uname;
     String intentName;
-    Button bt;
-
-
-
+    Button bt,saveForLater;
     ArrayList<TextView> memberno;
     ArrayList<EditText> nameText, collegeText;
     Button addButton;
-
+    String eventName,eventId,timestamp;
     int count=1;
     SharedPreferences sharedPreferences;
 
@@ -64,21 +62,21 @@ public class RegisterEventFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        String eventName= getArguments().getString("eventname");
-        String eventId = getArguments().getString("eventid");
+        eventName= getArguments().getString("eventName");
+        eventId = getArguments().getString("eventId");
+        sharedPreferences= this.getActivity().getSharedPreferences("login_details",0);
 
         View view = inflater.inflate( R.layout.fragment_register_event, container, false );
 
 
 
         apiInterface = ApiClient.getClient().create( ApiInterface.class );
-       // eventName = getIntent().getStringExtra("eventName");
-        //eventId = getIntent().getStringExtra("eventId");
         userName=(EditText) view.findViewById(R.id.user_name);
         userPhone = view.findViewById(R.id.phone_number);
         userClg=(EditText) view.findViewById(R.id.clg);
-         userEmail=(EditText) view.findViewById(R.id.useremail) ;
+        userEmail=(EditText) view.findViewById(R.id.useremail) ;
         bt = (Button) view.findViewById(R.id.registerNow);
+        saveForLater = view.findViewById(R.id.save);
         memberno = new ArrayList<>();
         nameText = new ArrayList<>();
         collegeText = new ArrayList<>();
@@ -86,11 +84,10 @@ public class RegisterEventFragment extends Fragment {
         collegeText.add(userClg);
         addButton=view.findViewById(R.id.add_mem);
         final LinearLayout layout = view.findViewById(R.id.layout_infater);
-        sharedPreferences= this.getActivity().getSharedPreferences("login_details",0);
         userName.setText(sharedPreferences.getString("Username",""));
         userClg.setText(sharedPreferences.getString("UserClg",""));
         userPhone.setText(sharedPreferences.getString("UserPhone",""));
-        userEmail.setText(sharedPreferences.getString("userEmail",""));
+        userEmail.setText(sharedPreferences.getString("UserEmail",""));
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +126,25 @@ public class RegisterEventFragment extends Fragment {
 
         });
 
+        saveForLater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor= sharedPreferences.edit();
+                Set<String> set = sharedPreferences.getStringSet("bookmarks", new HashSet<String>());
+                if(set.isEmpty()) {
+                    Set<String> newSet = new HashSet<String>();
+                    newSet.add(eventId);
+                    editor.putStringSet("bookmarks", newSet);
+                    editor.commit();
+                }else {
+                    set.add(eventId);
+                    editor.putStringSet("key", set);
+                    editor.commit();
+                }
+                Toast.makeText(getActivity(), "Event Bookmarked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +154,9 @@ public class RegisterEventFragment extends Fragment {
                 intentTeam="";
                 intentEmail="";
                 intentPhone = "";
+                Long tsLong = System.currentTimeMillis()/1000;
+                timestamp = tsLong.toString();
+                uname = nameText.get(0).getText().toString();
                 intentPhone += userPhone.getText().toString();
                intentEmail+= userEmail.getText().toString();
 
@@ -146,31 +165,17 @@ public class RegisterEventFragment extends Fragment {
                 }
                 intentName = intentName.substring(0, intentName.length() - 1);
 
-                for (int i = 0; i < collegeText.size(); i++) {
-                    intentClg += collegeText.get(i).getText().toString() + ",";
-                }
-                intentClg = intentClg.substring(0, intentClg.length() - 1);
+                intentClg = userClg.getText().toString();
 
 //
                 Boolean checker = validateCredentials();
                 if (checker) {
-
                     registerEvent();
-
                 }
             }
 
         });
         return view;
-
-
-
-
-
-
-
-
-
     }
     private void update() {
         for (int i = 0; i < memberno.size(); i++) {
@@ -178,30 +183,22 @@ public class RegisterEventFragment extends Fragment {
         }
     }
     void registerEvent() {
-        Call<ResponseModel> call = apiInterface.postregisterEvent( "asd", "asfa,", "asda",
-                "saf", "sfs", "sfsf", "fsdf", "dsfsf" );
+        Call<ResponseModel> call = apiInterface.postregisterEvent( uname, intentPhone, intentEmail,
+                intentClg, eventId, eventId , intentName, timestamp );
         call.enqueue( new Callback<ResponseModel>() {
             @Override
             public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
                 //TODO YAHAN PE EVENT KA DATA AAEGA API SE UI ME LAGA LENA
-
-
                 ResponseModel Rm = response.body();
-
-
                 Log.e( "Response", response.body().getStatus() + "" );
 
             }
 
             @Override
             public void onFailure(Call<ResponseModel> call, Throwable t) {
-                Log.e( "Response1", call.request().url() + "" + call.request().body() );
+                Log.e( "prerna", call.request().url() + "" + call.request().body() );
             }
-
-
         } );
-
-
     }
 
 
@@ -233,6 +230,15 @@ public class RegisterEventFragment extends Fragment {
         }
         if (userPhone.getText().toString().length() != 10) {
             userPhone.setError("Enter a valid Phone Number");
+            return false;
+        }
+        if(userEmail.getText().toString().equals("")){
+            userEmail.setError("Enter a email address");
+            return false;
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(userEmail.getText().toString()).matches()){
+            userEmail.setError("Enter a valid email address");
             return false;
         }
         return true;

@@ -13,8 +13,11 @@ import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventLocalModel;
 import com.elementsculmyca.ec19_app.DataSources.LocalServices.EventsDao_Impl;
 import com.elementsculmyca.ec19_app.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class SingleEventActivity extends AppCompatActivity {
-    TextView registerButton,eventName,eventDesc,eventVenue,eventDay;
+    TextView registerButton,eventName,eventDesc,eventVenue,eventDay,eventDate,eventDayTextView;
     ImageView sharebutton;
     EventsDao_Impl dao;
     private String eventId;
@@ -33,6 +36,9 @@ public class SingleEventActivity extends AppCompatActivity {
         eventVenue = findViewById(R.id.event_venue);
         registerButton = findViewById(R.id.register);
         sharebutton = findViewById(R.id.share_event);
+        eventDate = findViewById(R.id.event_date);
+        eventDayTextView=findViewById(R.id.tv_day);
+        eventDayTextView.setText(", Day ");
         dao=new EventsDao_Impl(AppDatabase.getAppDatabase(SingleEventActivity.this));
 
         // ATTENTION: This was auto-generated to handle app links.
@@ -57,41 +63,37 @@ public class SingleEventActivity extends AppCompatActivity {
         //add data to page
         eventName.setText(eventData.getTitle());
         eventId = eventData.getId();
-        eventClubName = eventData.getClubname();
-        eventCatogery = eventData.getCategory();
         eventDesc.setText(eventData.getDesc());
-        eventRules = eventData.getRules();
         eventVenue.setText(eventData.getVenue());
         eventPhotoLink = eventData.getPhotolink();
-        eventFee = eventData.getFee();
         eventStartTime = eventData.getStartTime();
-        eventEndTime = eventData.getEndTime();
-        eventCoordinator = eventData.getCoordinator();
-        eventPrize = eventData.getPrizes();
-        eventType = eventData.getEventType();
         eventDay.setText(eventData.getDay());
-        eventTags = eventData.getTags();
-        eventHitCount = eventData.getHitcount();
+        eventStartTime = eventData.getStartTime();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMMM-yyyy");
+        String dateString= formatter.format(new Date(eventStartTime));
+        eventDate.setText(dateString);
 
         final Bundle descFrag = new Bundle();
-        descFrag.putString("id",eventId);
-        DescriptionEventFragment descriptionEventFragment = new DescriptionEventFragment();
+        descFrag.putString("eventId",eventId);
+        descFrag.putString("eventName",eventData.getTitle());
+        final DescriptionEventFragment descriptionEventFragment = new DescriptionEventFragment();
         descriptionEventFragment.setArguments(descFrag);
-
+        final RegisterEventFragment registerEventFragment =new RegisterEventFragment();
+        registerEventFragment.setArguments(descFrag);
 
         FragmentManager manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.frame, new DescriptionEventFragment()).commit();
+        manager.beginTransaction().replace(R.id.frame, descriptionEventFragment).commit();
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (registerButton.getText().equals("Register Now!")) {
                     registerButton.setText("View Details");
                     FragmentManager manager = getSupportFragmentManager();
-                    manager.beginTransaction().replace(R.id.frame, new RegisterEventFragment()).commit();
+                    manager.beginTransaction().replace(R.id.frame, registerEventFragment).commit();
                 } else {
                     registerButton.setText("Register Now!");
                     FragmentManager manager = getSupportFragmentManager();
-                    manager.beginTransaction().replace(R.id.frame, new DescriptionEventFragment()).commit();
+                    manager.beginTransaction().replace(R.id.frame, descriptionEventFragment).commit();
                 }
             }
         });
